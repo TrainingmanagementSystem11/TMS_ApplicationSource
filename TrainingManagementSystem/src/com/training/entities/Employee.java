@@ -1,6 +1,6 @@
 package com.training.entities;
 
-public class Employee {
-	
+public class Employee{
+
 
 }
