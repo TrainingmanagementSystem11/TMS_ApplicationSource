@@ -8,6 +8,6 @@ public class ManagerView {
 		System.out.println("View Approval Requests");
 		System.out.println("View Feedbacks");
 		}
-	}
+}
 
 
