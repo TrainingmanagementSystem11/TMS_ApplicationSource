@@ -13,7 +13,7 @@ public class Manager extends Employee {
 			this.managerId = managerId;
 		}
 		@Override
-		public String ToString() {
+		public String toString() {
 			return "Manager [managerId="+managerId+ "]";
 		
 		

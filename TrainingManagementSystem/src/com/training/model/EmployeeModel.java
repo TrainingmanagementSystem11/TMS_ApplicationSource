@@ -3,7 +3,8 @@ package com.training.model;
 public class EmployeeModel {
 	
 	public EmployeeModel()
-	{}
+	{
+	}
 	private String userName;
 	private String password;
 	public String getUserName() {
