@@ -1,5 +1,5 @@
 package com.training.utilities;
 
-public class EmploeeType {
+public class EmployeeType {
 
 }
