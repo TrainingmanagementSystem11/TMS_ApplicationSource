@@ -1,6 +1,6 @@
 package com.training.entities;
 
-public class Manager extends Employee {
+public class Manager extends User {
 	
 	public Manager() {
 		

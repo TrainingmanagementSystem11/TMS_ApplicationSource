@@ -1,6 +1,6 @@
 package com.training.entities;
 
-public class Trainer extends Employee{
+public class Trainer extends User{
 
 	public Trainer() {
 		
