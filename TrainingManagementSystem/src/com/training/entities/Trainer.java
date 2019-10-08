@@ -3,6 +3,7 @@ package com.training.entities;
 import java.time.LocalDate;
 
 public class Trainer{
+	private String trainerId;
 	private String firstName;
 	private String lastName;
 	private int courseId;
@@ -55,10 +56,18 @@ public class Trainer{
 	public void setVenue(String venue) {
 		this.venue = venue;
 	}
+	
+	public String getTrainerId() {
+		return trainerId;
+	}
+	public void setTrainerId(String trainerId) {
+		this.trainerId = trainerId;
+	}
 	@Override
 	public String toString() {
-		return "Trainer [firstName=" + firstName + ", lastName=" + lastName + ", courseId=" + courseId + ", courseName="
-				+ courseName + ", startDate=" + startDate + ", endDate=" + endDate + ", venue=" + venue + "]";
+		return "Trainer [trainerId=" + trainerId + ", firstName=" + firstName + ", lastName=" + lastName + ", courseId="
+				+ courseId + ", courseName=" + courseName + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", venue=" + venue + "]";
 	}
 	
 }

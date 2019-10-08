@@ -18,14 +18,13 @@ public class TrainerDAOImpl implements TrainerDAO{
 		//System.out.println(results);
 		 ConnectionManager.closeConnection();
 		 if(results==1) {
-			
 			 return true;
 		 }else {
-			 //System.out.println("false");
 			 return false;
 		 }
 }
 }
+
 
 
 	
