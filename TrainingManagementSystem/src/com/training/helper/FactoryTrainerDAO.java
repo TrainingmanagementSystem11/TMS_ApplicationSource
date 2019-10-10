@@ -4,7 +4,7 @@ import com.training.dao.TrainerDAO;
 import com.training.dao.TrainerDAOImpl;
 
 public class FactoryTrainerDAO {
-public static TrainerDAO createAdminDAO() {
+public static TrainerDAO createTrainerDAO() {
 		
 		TrainerDAO trainerDAO=new TrainerDAOImpl();
 		
@@ -12,5 +12,6 @@ public static TrainerDAO createAdminDAO() {
 		
 		
 	}
+
 
 }
