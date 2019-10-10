@@ -1,18 +1,20 @@
 package com.training.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import com.training.dao.TrainerDAO;
 import com.training.helper.FactoryTrainerDAO;
+import com.training.model.TraineeModel;
 import com.training.model.TrainerModel;
 
 public class TrainerServiceImpl implements TrainerService {
 	
-	TrainerDAO trainerDAO=null;
+TrainerDAO trainerDAO=null;
 	
 	public TrainerServiceImpl(){
 		
-		this.trainerDAO=FactoryTrainerDAO.createAdminDAO();
+		this.trainerDAO=FactoryTrainerDAO.createTrainerDAO();
 		}
 	@Override
 	public boolean trainerAuthenticationService(TrainerModel trainerModel) {
@@ -30,5 +32,4 @@ public class TrainerServiceImpl implements TrainerService {
 		return trainerValid;	
 	}
 }
-
 
