@@ -12,5 +12,20 @@ public class AdminView {
         System.out.println("2.Schedule Training");
         System.out.println("3.Number Of Attendees");
         System.out.println("4.Add Venue");
-}
+        }
+	     
+	     switch(ch) {
+	     case 1:
+	    	 System.out.println(viewHistory);
+	     case 2:
+	    	 System.out.println(ScheduleTraining);
+	     case 3:
+		     System.out.println(NumberOfAttendees);
+	     case 4:
+		     System.out.println(Add Venue);
+		  default
+		  System.out.println(GoToBackHome));
+	     }
+	
+	
 }
