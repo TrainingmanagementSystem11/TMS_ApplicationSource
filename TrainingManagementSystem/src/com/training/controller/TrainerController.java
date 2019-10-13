@@ -27,18 +27,19 @@ public void handlepostTrainingDetails(TrainerModel model) {
 		if(outcome.contentEquals("success")) {
 			trainerView.postTrainingSuccess(model);	
 		}else {
-			trainerView.postTrainingFailure(model);
+			trainerView.postTrainingSuccess(model);
 		}
 	}else {
 		trainerView.validationFailedError();
 	}
-		
+}
 		public void handleDeleteTraining(TrainerModel model) {
-			String outcome=trainerService.deleteTraining(model);
+			String outcome=trainerService.deleteTrainingDetails(model);
 			if(outcome.contentEquals("success")) {
 				trainerView.showDeleteSuccess(model);	
 			}else {
 				trainerView.showDeleteFailure(model);
 			}
 	}
+		
 }
