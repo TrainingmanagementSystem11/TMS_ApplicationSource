@@ -64,6 +64,11 @@ private TrainerDAO trainerDAO;
 		return result;
 
 }
+	@Override
+	public String deleteTrainingDetails(TrainerModel model) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
 	
 

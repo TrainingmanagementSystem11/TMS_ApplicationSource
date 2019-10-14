@@ -5,5 +5,6 @@ import com.training.model.TrainerModel;
 public interface TrainerService {
 	public String postTrainigDetails(TrainerModel model);
 	public String deleteTrainingDetails(TrainerModel model);
+	String deleteTrainigDetails(TrainerModel model);
 	
 }

@@ -37,7 +37,7 @@ public class TraineeServiceImpl {
 	   training.setfeedback(model.getfeedback());
 	   String result="fail";
 		try {
-				boolean updated=TraineeDAO.uploadfeedback(training);
+	 			boolean updated=TraineeDAO.uploadfeedback(training);
 				if(updated)
 					result="success";
 			} catch (ClassNotFoundException | SQLException e) {
