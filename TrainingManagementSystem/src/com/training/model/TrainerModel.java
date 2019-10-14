@@ -3,7 +3,7 @@ package com.training.model;
 import java.time.LocalDate;
 
 public class TrainerModel {
-	private int trainerId;
+	private int courseId;
 	private int employeeId;
 	private String courseName;
 	private LocalDate startDate;
@@ -14,12 +14,12 @@ public class TrainerModel {
 		
 	}
 
-	public int getTrainerId() {
-		return trainerId;
+	public int getCourseId() {
+		return courseId;
 	}
 
-	public void setTrainerId(int trainerId) {
-		this.trainerId = trainerId;
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 
 	public int getEmployeeId() {
@@ -64,7 +64,7 @@ public class TrainerModel {
 
 	@Override
 	public String toString() {
-		return "TrainerModel [trainerId=" + trainerId + ", employeeId=" + employeeId + ", courseName=" + courseName
+		return "TrainerModel [courseId=" + courseId + ", employeeId=" + employeeId + ", courseName=" + courseName
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", venue=" + venue + "]";
 	}
 
@@ -72,11 +72,11 @@ public class TrainerModel {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + courseId;
 		result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
 		result = prime * result + employeeId;
 		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
-		result = prime * result + trainerId;
 		result = prime * result + ((venue == null) ? 0 : venue.hashCode());
 		return result;
 	}
@@ -90,6 +90,8 @@ public class TrainerModel {
 		if (getClass() != obj.getClass())
 			return false;
 		TrainerModel other = (TrainerModel) obj;
+		if (courseId != other.courseId)
+			return false;
 		if (courseName == null) {
 			if (other.courseName != null)
 				return false;
@@ -107,8 +109,6 @@ public class TrainerModel {
 				return false;
 		} else if (!startDate.equals(other.startDate))
 			return false;
-		if (trainerId != other.trainerId)
-			return false;
 		if (venue == null) {
 			if (other.venue != null)
 				return false;
@@ -116,8 +116,4 @@ public class TrainerModel {
 			return false;
 		return true;
 	}
-
-	}
-
-
-	
+}
