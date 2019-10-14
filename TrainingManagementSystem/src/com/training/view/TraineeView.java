@@ -2,6 +2,8 @@ package com.training.view;
 
 import java.util.Scanner;
 
+import javax.xml.bind.ValidationException;
+
 import com.training.controller.TraineeController;
 import com.training.model.TraineeModel;
 
