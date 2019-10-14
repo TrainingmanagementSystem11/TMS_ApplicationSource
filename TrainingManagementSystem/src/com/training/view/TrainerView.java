@@ -1,5 +1,6 @@
 package com.training.view;
 
+import com.training.model.PostTrainingDetailsModel;
 import com.training.model.TrainerModel;
 
 public class TrainerView {
@@ -7,14 +8,14 @@ public class TrainerView {
 	private TrainerMainView mainView=new TrainerMainView();
 
 	
-public void postTrainingSuccess(TrainerModel model) {
+public void postTrainingSuccess(PostTrainingDetailsModel model) {
 		
-		System.out.println("\n Updated successful for employee id=>"+model.getEmployeeId());
+		System.out.println("\n Training Updated successful for employee id=>"+model.getEmployeeId());
 		mainView.mainMenu();
 	}
 	
-	public void postTrainingFailure(TrainerModel model) {
-		System.out.println("\n Update unsuccessful for employee id=>"+model.getEmployeeId());
+	public void postTrainingFailure(PostTrainingDetailsModel model) {
+		System.out.println("\n Training Update unsuccessful for employee id=>"+model.getEmployeeId());
 		mainView.mainMenu();
 	}
 	

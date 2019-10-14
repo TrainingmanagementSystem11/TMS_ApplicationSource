@@ -6,6 +6,7 @@ import com.training.entities.Trainer;
 import com.training.exception.EmployeeIdValidException;
 import com.training.helper.FactoryTrainerDB;
 import com.training.model.PostTrainingDetailsModel;
+import com.training.model.ViewFeedbackModel;
 
 public class TrainerServiceImpl implements TrainerService {
 	
@@ -41,5 +42,17 @@ private TrainerDAO trainerDAO;
 		}
 		return result;
 	}
+
+	@Override
+	public String viewTrainingFeedback(ViewFeedbackModel model) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	
+	
+	}
+
+	
+	
 	

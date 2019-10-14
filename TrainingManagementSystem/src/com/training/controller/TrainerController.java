@@ -18,9 +18,9 @@ public void handlepostTrainingDetails(PostTrainingDetailsModel model) {
 		 {
 		String outcome=trainerService.postTrainingDetails(model);
 		if(outcome.contentEquals("success")) {
-			trainerView.showpostTrainingSuccess(model);	
+			trainerView.postTrainingSuccess(model);	
 		}else {
-			trainerView.showpostTrainingFailure(model);
+			trainerView.postTrainingFailure(model);
 		}
 	}
 }
