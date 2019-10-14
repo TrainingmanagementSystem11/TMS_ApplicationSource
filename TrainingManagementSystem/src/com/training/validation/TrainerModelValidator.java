@@ -10,19 +10,16 @@ public boolean validate(TrainerModel model) {
 		
 		boolean result=false;
 		
-		if(validString(model.getCourseName()) &&validNumber(model.getTrainerId())
+		if(validcourseName(model.getCourseName()) &&validNumber(model.getCourseId())
 			&&	validNumber(model.getEmployeeId())){
 			result=true;
 		}
 		return result;
 	}
-
-
-
-	public boolean validString(String val) {
+public boolean validcourseName(String courseName) { {
 		
 		boolean result=false;
-		char chars[]=val.toCharArray();
+		char chars[]=courseName.toCharArray();
 		List<Character> alphabets=new ArrayList<>();
 		for(int i=97;i<=122;i++) {
 			alphabets.add((char)i);
@@ -37,6 +34,7 @@ public boolean validate(TrainerModel model) {
 		}
 		return result;
 	}
+}
 	public boolean validNumber(int number) {
 		boolean result=false;
 		String data=String.valueOf(number);
@@ -45,5 +43,4 @@ public boolean validate(TrainerModel model) {
 		}
 		return result;
 	}
-	
 }

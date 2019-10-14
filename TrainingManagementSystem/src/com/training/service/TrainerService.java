@@ -1,9 +1,9 @@
 package com.training.service;
 
-import com.training.model.TrainerModel;
+import com.training.model.PostTrainingDetailsModel;
 
 public interface TrainerService {
-	public String postTrainigDetails(TrainerModel model);
-	public String deleteTrainingDetails(TrainerModel model);
+	public String postTrainingDetails(PostTrainingDetailsModel model);
+	
 	
 }
