@@ -20,7 +20,7 @@ public class AdminServiceImpl implements AdminService{
 			// TODO Auto-generated method stub
 			boolean adminValid = false;
 			try {
-				adminValid=adminDAO.adminAuth(adminModel.getAdminId(), adminModel.getAdminPassword());
+			adminValid=adminDAO.adminAuth(adminModel.get(), adminModel.get());
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
