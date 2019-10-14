@@ -1,35 +1,70 @@
 package com.training.service;
 
 import java.sql.SQLException;
-import java.util.List;
-
 import com.training.dao.TrainerDAO;
-import com.training.helper.FactoryTrainerDAO;
-import com.training.model.TraineeModel;
+import com.training.entities.Trainer;
+import com.training.exception.NoTrainingFoundException;
+import com.training.helper.FactoryTrainerDB;
 import com.training.model.TrainerModel;
 
 public class TrainerServiceImpl implements TrainerService {
 	
-TrainerDAO trainerDAO=null;
+private TrainerDAO trainerDAO;
 	
-	public TrainerServiceImpl(){
-		
-		this.trainerDAO=FactoryTrainerDAO.createTrainerDAO();
-		}
-	@Override
-	public boolean trainerAuthenticationService(TrainerModel trainerModel) {
-		// TODO Auto-generated method stub
-		boolean trainerValid = false;
-		try {
-			trainerValid=trainerDAO.trainerAuth(trainerModel.getTrainerId(), trainerModel.getTrainerpassword());
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return trainerValid;	
+	public TrainerServiceImpl() {
+		this.trainerDAO=FactoryTrainerDB.createTrainerDB();
 	}
+	@Override
+	public String postTrainigDetails(TrainerModel model) {
+		// TODO Auto-generated method stub
+		Trainer trainer=new Trainer();
+		trainer.setEmployeeId(model.getEmployeeId());
+		trainer.setTrainerId(model.getTrainerId());
+		trainer.setCourseName(model.getCourseName());
+		trainer.setStartDate(model.getStartDate());
+		trainer.setEndDate(model.getEndDate());
+		trainer.setVenue(model.getVenue());
+		String result="fail";
+		try {
+			boolean stored=trainerDAO.postTrainingDetails(trainer);
+			if(stored)
+				result="success";
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("!ERROR[Updating failed because of internal issues...]");
+		}
+		return result;
+	}
+	@Override
+	public String deleteTrainigDetails(TrainerModel model) {
+		 String result="fail";
+		boolean trainingFound=false;
+		Trainer trainer=new Trainer();
+		if(trainingFound) {
+		try {
+			boolean deleted=trainerDAO.deleteTrainingDetails(trainer);
+			if(deleted)
+				result="success";
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("!ERROR[Employee record deletion failed!!]");
+		}	
+		
+	}
+		else {
+			try {
+				throw new NoTrainingFoundException("Employee not found");
+			} catch (NoTrainingFoundException e) {
+				// TODO Auto-generated catch block
+				System.out.println("!ERROR[Employee with specified id does not exist!!]");
+			}
+		}
+		return result;
+
 }
+	}
+	
+
 
