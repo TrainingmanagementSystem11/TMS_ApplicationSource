@@ -2,9 +2,13 @@ package com.training.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.training.entities.Training;
 import com.training.integrate.ConnectionManager;
 
 public class TraineeDAOImpl implements TraineeDAO {
@@ -17,18 +21,25 @@ public class TraineeDAOImpl implements TraineeDAO {
 				
 				Connection connection=ConnectionManager.openConnection();
 				PreparedStatement statement=
-						connection.prepareStatement("insert into training values(?,?,new)");
-				statement.setInt(1,training.getEmployeeId());
-				statement.setString(2,training.getcourseName());
+						connection.prepareStatement("insert into training values(course_name,employee_id)(?,?)");
+				statement.setInt(2,training.getEmployeeId());
+				statement.setString(1,training.getCourseName());
+				int rows=statement.executeUpdate();
+				ConnectionManager.closeConnection();
+				if(rows>0)
+					return true;
+				else
+				return false;
+
 
 		}
-		@Override
+	/*	@Override
 		public boolean uploadfeedback(Training training) throws ClassNotFoundException, SQLException{
 		  Connection connection=ConnectionManager.openConnection();
 			PreparedStatement statement=
 					connection.prepareStatement("update training set feedback=? where employee_id=? and course_name=?");
-			statement.setString(1,employees.getFeedback());
-			statement.setInt(2, employees.getEmployeeId());
+			statement.setString(1,training.getFeedback());
+			statement.setInt(2, training.getEmployeeId());
 			statement.setString(3,training.getCourseName());
 			int rows=statement.executeUpdate();
 			ConnectionManager.closeConnection();
@@ -73,9 +84,11 @@ public class TraineeDAOImpl implements TraineeDAO {
 			else
 			return false;
 		}
+			
+	
 
 
-
+*/
 
 		}
 

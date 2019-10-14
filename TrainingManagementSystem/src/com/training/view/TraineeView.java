@@ -3,10 +3,14 @@ package com.training.view;
 import java.util.Scanner;
 
 import com.training.controller.TraineeController;
+
+import com.training.model.FeedbackTraineeModel;
 import com.training.model.TraineeModel;
+
 
 public class TraineeView {
 	public void mainTraineeView() {
+	  
 		
 		System.out.println("\n");
 		System.out.println("\t \t ========Main Menu========");
@@ -26,13 +30,13 @@ public class TraineeView {
 			case 1:selectcourse();
 			       break;
 			case 2:
-				   checkstatus();
+				  // checkstatus();
 				   break;
-			case 3:givefeedback();
+			case 3://givefeedback();
 				   break;
-			case 4:cancelcourse();
+			case 4://cancelcourse();
 				   break;
-			case 5:viewhistory();
+			case 5://viewhistory();
 				   break;
 			case 6:System.exit(0);
 			        break;
@@ -51,40 +55,25 @@ public class TraineeView {
 	{
 	  try(Scanner scanner=new Scanner(System.in);){
 			
-			int employeeId=0;
+			int employeeId;
 			System.out.print("Employee Id:");
-			if(scanner.hasNextInt()) {
+			
 			employeeId=scanner.nextInt();
-			}
-			else {
-				try {
-					throw new ValidationException("[!ERROR:Invalid Employee Id]");
-					}catch(ValidationException e) {
-						System.out.println(e.getMessage());
-						mainTraineeView();
-					}
-			}
-			TraineeModelValidator validator=new TraineeModelValidator();
 			System.out.print("Enter Course name:");
 			String courseName=scanner.next();
-			boolean validcourseName=validator.validcourseName(courseName);
-			if(!validcourseName)
-				try {
-				throw new ValidationException("[!ERROR:Invalid Course Name specified]");
-				}catch(ValidationException e) {
-					System.out.println(e.getMessage());
-					mainTraineeView();
-				}
-				TraineeModel  model=new TraineeModel();
-				model.setEmployeeId(employeeId);
-			    model.setcourseName(courseName);
-			    TraineeController controller=new TraineeController();
-			    controller.handlecourse(model);
-			    mainTraineeView();
-		}catch(Exception e) {
-			
-		}
-	    public void checkstatus()
+			TraineeModel  model=new TraineeModel();
+			model.setEmployeeId(employeeId);
+		    model.setCourseName(courseName);
+		    TraineeController controller=new TraineeController();
+		    controller.handlecourse(model);
+		    mainTraineeView();
+			}catch(Exception e) 
+	  {
+				e.printStackTrace();
+			}
+		} 
+	
+	 /*   public void checkstatus()
 	    {
 	      try(Scanner scanner=new Scanner(System.in);){
 			
@@ -92,33 +81,15 @@ public class TraineeView {
 			System.out.print("Employee Id:");
 			if(scanner.hasNextInt()) {
 			employeeId=scanner.nextInt();
-			}
-			else {
-				try {
-					throw new ValidationException("[!ERROR:Invalid Employee Id]");
-					}catch(ValidationException e) {
-						System.out.println(e.getMessage());
-						mainTraineeView();
-					}
-			}
-			TraineeModelValidator validator=new TraineeModelValidator();
 			System.out.print("Enter Course name:");
 			String courseName=scanner.next();
-			boolean validcourseName=validator.validcourseName(courseName);
-			if(!validcourseName)
-				try {
-				throw new ValidationException("[!ERROR:Invalid Course Name specified]");
-				}catch(ValidationException e) {
-					System.out.println(e.getMessage());
-					mainTraineeView();
-				}
 				TraineeModel  model=new TraineeModel();
 				model.setEmployeeId(employeeId);
-			    model.setcourseName(courseName);
+			    model.setCourseName(courseName);
 			    TraineeController controller=new TraineeController();
 			    controller.handlestatus(model);
 			    mainTraineeView();
-		}catch(Exception e) {
+		}}catch(Exception e) {
 			
 		}
 	    }
@@ -130,43 +101,20 @@ public class TraineeView {
 		System.out.print("Employee Id:");
 		if(scanner.hasNextInt()) {
 		employeeId=scanner.nextInt();
-		}
-		else {
-			try {
-				throw new ValidationException("[!ERROR:Invalid Employee Id]");
-				}catch(ValidationException e) {
-					System.out.println(e.getMessage());
-			        mainTraineeView();
-				}
-			}
-				System.out.println("Enter Course Name");
-				 String course=scanner.next();
-				 boolean validCourse=validator.validString(course);
-			     if(!validCourse)
-				try {
-				throw new ValidationException("[!ERROR:Invalid Last Name]");
-				}catch(ValidationException e) {
-					System.out.println(e.getMessage());
-					mainTraineeView();
-				}
-				System.out.println("Give Feedback:");
-				String feedback=scanner.next();
-				 boolean validfeedback=validator.validString(course);
-			     if(!validfeedback)
-				try {
-				throw new ValidationException("[!ERROR:Invalid Last Name]");
-				}catch(ValidationException e) {
-					System.out.println(e.getMessage());
-					mainTraineeView();
-				}
-		        TraineeModel model=new TraineeModel();
-		        model.setEmployeeId(employeeId);
-		        model.setcourseName(course);
-		        TraineeController controller=new TraineeController();
-		        controller.UpdateFeedback(model);
-		
-					mainTraineeView();
-		}
+		System.out.println("Enter Course Name");
+		String course=scanner.next();
+		System.out.println("Give Feedback:");
+		String feedback=scanner.next();
+		FeedbackTraineeModel model=new FeedbackTraineeModel();
+		 model.setEmployeeId(employeeId);
+		 model.setCourseName(course);
+		 model.setFeedback(feedback);
+		 TraineeController controller=new TraineeController();
+		 controller.UpdateFeedback(model);
+		 mainTraineeView();
+		}}catch(Exception e) {
+			
+	    }
 	    }
 	    public void cancelcourse()
 	    {
@@ -176,41 +124,20 @@ public class TraineeView {
 		System.out.print("Employee Id:");
 		if(scanner.hasNextInt()) {
 		employeeId=scanner.nextInt();
-		}
-		else {
-			try {
-				throw new ValidationException("[!ERROR:Invalid Employee Id]");
-				}catch(ValidationException e) {
-					System.out.println(e.getMessage());
-					mainMenu();
-				}
-		}
 		System.out.println("Enter Course Name");
 		String course=scanner.next();
-	    boolean validCourse=validator.validString(course);
-	    if(!validCourse)
-	    try {
-			 throw new ValidationException("[!ERROR:Invalid Last Name]");
-			}catch(ValidationException e) {
-				System.out.println(e.getMessage());
-				mainTraineeView();
-			}
-	    
-	    }
 	    TraineeModel model=new TraineeModel();
 		model.setEmployeeId(employeeId);
-	    model.setcourseName(course);
+	    model.setCourseName(course);
 		TraineeController controller=new TraineeController();
 		controller.handleDeleteCourse(model);
 	    mainTraineeView();
-	}catch(Exception e) {
+	}}catch(Exception e) {
 		System.out.println("[!Error processing request. Please try again later]");
 	}
+	    }
 	    public void viewhistory()
 	    {
 	    }
-	    }
-}
-}
-		
-		
+       */ 
+    }	

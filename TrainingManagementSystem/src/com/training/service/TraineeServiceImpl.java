@@ -4,23 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.training.dao.TraineeDAO;
+import com.training.entities.Training;
+import com.training.helper.FactoryEmployeeDB;
 import com.training.model.TraineeModel;
 
-public class TraineeServiceImpl {
-	public String registerCourse(TraineeModel model)
+public class TraineeServiceImpl implements TraineeService {
+	
+		 
+
+	    private TraineeDAO traineeDAO;
+	    
+	   
+	    
+	public boolean registerCourse(TraineeModel model)
 	 {
+	
 	        Training training=new Training();
 			training.setEmployeeId(model.getEmployeeId());
-			training.setCourseName(model.getcourseName());
-			String result="fail";
+			training.setCourseName(model.getCourseName());
+			boolean result=false;
 			try {
-				boolean stored=TraineeDAO.storeCourseDetails(training);
+				boolean stored=traineeDAO.storecourseDetails(training);
 				if(stored)
-					result="success";
+					result=true;
 				
-			} catch (ClassNotFoundException | SQLException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+			    e.printStackTrace();
 				System.out.println("!ERROR[Registration failed because of internal issues...]");
 			}
 			return result;
@@ -28,12 +38,12 @@ public class TraineeServiceImpl {
 	 
 	 
 	 }
-	 @Override
-	 public String updatingfeedback(TraineeModel model)
+	 //@Override
+	/* public String updatingfeedback(TraineeModel model)
 	 {
 	   Training training=new Training();
 	   training.setEmployeeId(model.getEmployeeId());
-	   training.setCourseName(model.getcourseName());
+	   training.setCourseName(model.getCourseName());
 	   training.setfeedback(model.getfeedback());
 	   String result="fail";
 		try {
@@ -72,7 +82,7 @@ public class TraineeServiceImpl {
 			return employeesModelList;
 		}
 	 
-	 
+	
 	 
 	 @Override
 	 public String deleteCourse(TraineeModel model){
@@ -112,5 +122,5 @@ public class TraineeServiceImpl {
 	 
 	 }
 	 
-	}
+	}*/
 }

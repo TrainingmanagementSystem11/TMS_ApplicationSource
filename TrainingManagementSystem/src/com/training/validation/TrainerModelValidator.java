@@ -3,14 +3,15 @@ package com.training.validation;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.training.model.TraineeModel;
 import com.training.model.TrainerModel;
 
 public class TrainerModelValidator {
-public boolean validate(TrainerModel model) {
+public boolean validate(TraineeModel model) {
 		
 		boolean result=false;
 		
-		if(validString(model.getCourseName()) &&validNumber(model.getTrainerId())
+		if(validString(model.getCourseName()) &&validNumber(model.getEmployeeId())
 			&&	validNumber(model.getEmployeeId())){
 			result=true;
 		}
