@@ -11,8 +11,8 @@ public interface TraineeDAO {
 		
 	public boolean storecourseDetails(Training training) throws ClassNotFoundException, SQLException;
  	public boolean uploadfeedback(Training training) throws ClassNotFoundException, SQLException;
-  	//public List<Training> getAllEmployees() throws ClassNotFoundException, SQLException;
-  //	public boolean deleteNomineeDetails(Training training) throws ClassNotFoundException, SQLException ;
+  	public List<Training> getAllEmployees() throws ClassNotFoundException, SQLException;
+  	public boolean deleteNomineeDetails(Training training) throws ClassNotFoundException, SQLException ;
 	
 
 }

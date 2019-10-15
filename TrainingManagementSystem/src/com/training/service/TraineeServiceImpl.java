@@ -7,6 +7,7 @@ import com.training.dao.TraineeDAO;
 import com.training.entities.Training;
 import com.training.helper.FactoryEmployeeDB;
 import com.training.model.FeedbackTraineeModel;
+import com.training.model.FullTraineeModel;
 import com.training.model.TraineeModel;
 
 public class TraineeServiceImpl implements TraineeService {
@@ -61,24 +62,23 @@ public class TraineeServiceImpl implements TraineeService {
 			return result;
 	 
 	 }
-	/* @Override
+	 @Override
 		public List<TraineeModel> retrieveEmployees() {
 			// TODO Auto-generated method stub
 			List<TraineeModel> employeesModelList=new ArrayList<>();
 			try {
-				List<Training> employeesList=traineeDAO.getAllEmployeesCourse();
+				List<Training> employeesList=traineeDAO.getAllEmployees();
 				for(Training training:employeesList) {
 					
 					TraineeModel traineeModel=new TraineeModel();
-					traineeModel.setEmployeeId(training.getEmployeeId());
-					traineeModel.setCourseName(training.getCourseName());
-					traineeModel.setStatus(training.getSalary());				
-					traineeModel.setFeedback(training.getFeedback());
+					traineeModel.setEmployee_id(training.getEmployeeId());
+					traineeModel.setCourse_name(training.getCourseName());
+		
 					employeesModelList.add(traineeModel);
 					
 				}
 				
-			} catch (ClassNotFoundException | SQLException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -89,13 +89,14 @@ public class TraineeServiceImpl implements TraineeService {
 	
 	 
 	 @Override
-	 public String deleteCourse(TraineeModel model){
+	 public boolean deleteCourse(TraineeModel model){
 	   	List<TraineeModel> traineeList= retrieveEmployees();
-			String result="fail";
+			boolean result=false;
 			boolean traineeFound=false;
 			Training  training=new Training();
 			for(TraineeModel traineeModel: traineeList) {
-				if(traineeModel.getEmployeeId()==model.getEmployeeId()) {
+				if(traineeModel.getEmployeeId()==model.get
+						EmployeeId()) {
 					training.setEmployeeId(model.getEmployeeId());
 					training.setCourseName(model.getCourse_name());
 					traineeFound=true;
@@ -106,8 +107,8 @@ public class TraineeServiceImpl implements TraineeService {
 			try {
 				boolean deleted=traineeDAO.deleteNomineeDetails(training);
 				if(deleted)
-					result="success";
-			} catch (ClassNotFoundException | SQLException e) {
+					result=true;
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println("!ERROR[Employee record deletion failed!!]");
 			}	
@@ -115,8 +116,8 @@ public class TraineeServiceImpl implements TraineeService {
 		}
 			else {
 				try {
-					throw new NoEmployeeFoundException("Course for Employee not found");
-				} catch (NoEmployeeFoundException e) {
+					throw new Exception("Course for Employee not found");
+				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					System.out.println("!ERROR[Employee with specified Course does not exist!!]");
 				}
@@ -126,5 +127,5 @@ public class TraineeServiceImpl implements TraineeService {
 	 
 	 }
 	 
-	}*/
-}
+	}
+

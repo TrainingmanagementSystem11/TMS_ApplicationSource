@@ -35,21 +35,21 @@ public class TraineeController {
 		public void UpdateFeedback(FeedbackTraineeModel model){
 			System.out.println(model.getCourse_name());
 		     System.out.println(model.getEmployee_id());
-		     
+		     System.out.println(model.getFeedback());
 		  boolean outcome=traineeService.updatingfeedback(model);
 			if(outcome==true) {
 				System.out.println("Feedback is successfully updated");
 			}else {
 				System.out.println("Feedback is failed to update");
 			}}
-	  /*     public void handleDeleteCourse(TraineeModel model){
-	         String outcome=traineeService.deleteCourse(model);
-			if(outcome.contentEquals("success")) {
+	      public void handleDeleteCourse(TraineeModel model){
+	         boolean outcome=traineeService.deleteCourse(model);
+			if(outcome==true){
 				System.out.println("Nominee cancelled successfully");
 			}else {
-				System.out.println("Nominee cancelled successfully");
+				System.out.println("Nominee is not cancelled successfully");
 }}	
-		public void handlestatus(TraineeModel model) {
+	/*	public void handlestatus(TraineeModel model) {
 			// TODO Auto-generated method stub
 			
 	

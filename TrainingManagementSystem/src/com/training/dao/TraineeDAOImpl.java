@@ -37,7 +37,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 		public boolean uploadfeedback(Training training) throws ClassNotFoundException, SQLException{
 		  Connection connection=ConnectionManager.openConnection();
 			PreparedStatement statement=
-					connection.prepareStatement("update training set feedback=? where employee_id=? and course_name=?");
+					connection.prepareStatement("update trainings set feedback=? where employee_id=? and course_name=?");
 			statement.setString(1,training.getFeedback());
 			statement.setInt(2, training.getEmployeeId());
 			statement.setString(3,training.getCourseName());
@@ -49,14 +49,14 @@ public class TraineeDAOImpl implements TraineeDAO {
 			return false;
 
 		}
-		/*
+		
 		@Override
 			public List<Training> getAllEmployees() throws ClassNotFoundException, SQLException {
 				// TODO Auto-generated method stub
 				Connection connection=ConnectionManager.openConnection();
 				Statement statement=connection.createStatement();
 				ResultSet resultSet=
-						statement.executeQuery("select * from training");
+						statement.executeQuery("select * from trainings");
 				
 				List<Training> employeesList=new ArrayList<Training>();
 				while(resultSet.next()) {
@@ -75,7 +75,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 			// TODO Auto-generated method stub
 			Connection connection=ConnectionManager.openConnection();
 			PreparedStatement statement=
-					connection.prepareStatement("delete from training where employee_id=? and course_name=?");
+					connection.prepareStatement("delete from trainings(course_name,employee_id) where employee_id=? and course_name=?");
 			statement.setInt(1, training.getEmployeeId());
 			statement.setString(2,training.getCourseName());
 			int rows=statement.executeUpdate();
@@ -89,7 +89,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 	
 
 
-*/
+
 
 		}
 

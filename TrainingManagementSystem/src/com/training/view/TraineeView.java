@@ -34,7 +34,7 @@ public class TraineeView {
 				   break;
 			case 3:givefeedback();
 				   break;
-			case 4://cancelcourse();
+			case 4:cancelcourse();
 				   break;
 			case 5://viewhistory();
 				   break;
@@ -113,10 +113,10 @@ public class TraineeView {
 		 controller.UpdateFeedback(model);
 		 mainTraineeView();
 		}}catch(Exception e) {
-			
+			e.printStackTrace();
 	    }
 	    }
-	   /* public void cancelcourse()
+	   public void cancelcourse()
 	    {
 	       try(Scanner scanner=new Scanner(System.in);){
 		
@@ -127,8 +127,8 @@ public class TraineeView {
 		System.out.println("Enter Course Name");
 		String course=scanner.next();
 	    TraineeModel model=new TraineeModel();
-		model.setEmployeeId(employeeId);
-	    model.setCourseName(course);
+		model.setEmployee_id(employeeId);
+	    model.setCourse_name(course);
 		TraineeController controller=new TraineeController();
 		controller.handleDeleteCourse(model);
 	    mainTraineeView();
@@ -136,7 +136,7 @@ public class TraineeView {
 		System.out.println("[!Error processing request. Please try again later]");
 	}
 	    }
-	    public void viewhistory()
+	   /* public void viewhistory()
 	    {
 	    }
        */ 
