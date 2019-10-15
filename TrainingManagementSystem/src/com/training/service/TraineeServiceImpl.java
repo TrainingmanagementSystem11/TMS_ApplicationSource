@@ -6,6 +6,7 @@ import java.util.List;
 import com.training.dao.TraineeDAO;
 import com.training.entities.Training;
 import com.training.helper.FactoryEmployeeDB;
+import com.training.model.FeedbackTraineeModel;
 import com.training.model.TraineeModel;
 
 public class TraineeServiceImpl implements TraineeService {
@@ -24,7 +25,7 @@ public class TraineeServiceImpl implements TraineeService {
 	
 	        Training training=new Training();
 			training.setEmployeeId(model.getEmployeeId());
-			training.setCourseName(model.getCourseName());
+			training.setCourseName(model.getCourse_name());
 			boolean result=false;
 			try {
 				boolean stored=traineeDAO.storecourseDetails(training);
@@ -41,26 +42,26 @@ public class TraineeServiceImpl implements TraineeService {
 	 
 	 
 	 }
-	 //@Override
-	/* public String updatingfeedback(TraineeModel model)
+	@Override
+	 public boolean updatingfeedback(FeedbackTraineeModel model)
 	 {
 	   Training training=new Training();
-	   training.setEmployeeId(model.getEmployeeId());
-	   training.setCourseName(model.getCourseName());
-	   training.setfeedback(model.getfeedback());
-	   String result="fail";
+	   training.setEmployeeId(model.getEmployee_id());
+	   training.setCourseName(model.getCourse_name());
+	   training.setFeedback(model.getFeedback());
+	   boolean result=false;
 		try {
-				boolean updated=TraineeDAO.uploadfeedback(training);
+	 			boolean updated=traineeDAO.uploadfeedback(training);
 				if(updated)
-					result="success";
-			} catch (ClassNotFoundException | SQLException e) {
+					result=true;
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println("!ERROR[Feedback updation failed!!]");
 			}
 			return result;
 	 
 	 }
-	 @Override
+	/* @Override
 		public List<TraineeModel> retrieveEmployees() {
 			// TODO Auto-generated method stub
 			List<TraineeModel> employeesModelList=new ArrayList<>();
@@ -96,7 +97,7 @@ public class TraineeServiceImpl implements TraineeService {
 			for(TraineeModel traineeModel: traineeList) {
 				if(traineeModel.getEmployeeId()==model.getEmployeeId()) {
 					training.setEmployeeId(model.getEmployeeId());
-					training.setCourseName(model.getCourseName());
+					training.setCourseName(model.getCourse_name());
 					traineeFound=true;
 					break;
 				}

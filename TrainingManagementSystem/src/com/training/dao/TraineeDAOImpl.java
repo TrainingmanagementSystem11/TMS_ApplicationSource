@@ -21,7 +21,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 				
 				Connection connection=ConnectionManager.openConnection();
 				PreparedStatement statement=
-						connection.prepareStatement("insert into trainings(course_name,status,feedback,employee_id) values(?,processing,?)");
+						connection.prepareStatement("insert into trainings(course_name,employee_id) values(?,?)");
 				statement.setInt(2,training.getEmployeeId());
 				statement.setString(1,training.getCourseName());
 				int rows=statement.executeUpdate();
@@ -33,7 +33,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 
 
 		}
-	/*	@Override
+		@Override
 		public boolean uploadfeedback(Training training) throws ClassNotFoundException, SQLException{
 		  Connection connection=ConnectionManager.openConnection();
 			PreparedStatement statement=
@@ -49,6 +49,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 			return false;
 
 		}
+		/*
 		@Override
 			public List<Training> getAllEmployees() throws ClassNotFoundException, SQLException {
 				// TODO Auto-generated method stub

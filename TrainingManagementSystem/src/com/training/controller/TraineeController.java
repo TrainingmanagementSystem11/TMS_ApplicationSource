@@ -9,7 +9,7 @@ import com.training.view.TraineeView;
 
 public class TraineeController {
 	public TraineeService traineeService;
-	TraineeView traineeView=new TraineeView();
+	
  public TraineeController() {
 	 this.traineeService=FactoryEmployeeDB.createTraineeService();
  }
@@ -19,7 +19,7 @@ public class TraineeController {
 		//	TrainerModelValidator validator=new TrainerModelValidator();
 					
 			//if(validator.validate(model)) {
-		     System.out.println(model.getCourseName());
+		     System.out.println(model.getCourse_name());
 		     System.out.println(model.getEmployeeId());
 			
 			boolean outcome=traineeService.registerCourse(model);
@@ -31,15 +31,18 @@ public class TraineeController {
 		else {
 			System.out.println("Data Validation Failed"); 
 		}
-		//}
-	/*	public void UpdateFeedback(FeedbackTraineeModel model){
-		  String outcome=TraineeService.updatingfeedback(model);
-			if(outcome.contentEquals("success")) {
+	}
+		public void UpdateFeedback(FeedbackTraineeModel model){
+			System.out.println(model.getCourse_name());
+		     System.out.println(model.getEmployee_id());
+		     
+		  boolean outcome=traineeService.updatingfeedback(model);
+			if(outcome==true) {
 				System.out.println("Feedback is successfully updated");
 			}else {
 				System.out.println("Feedback is failed to update");
 			}}
-	       public void handleDeleteCourse(TraineeModel model){
+	  /*     public void handleDeleteCourse(TraineeModel model){
 	         String outcome=traineeService.deleteCourse(model);
 			if(outcome.contentEquals("success")) {
 				System.out.println("Nominee cancelled successfully");
@@ -51,6 +54,6 @@ public class TraineeController {
 			
 	
 }
-*/
-	 }
+
+	 }*/
 	 }

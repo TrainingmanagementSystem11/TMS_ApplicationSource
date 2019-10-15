@@ -3,6 +3,7 @@ package com.training.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.training.entities.Manager;
 import com.training.entities.Trainer;
 
 public interface TrainerDAO {

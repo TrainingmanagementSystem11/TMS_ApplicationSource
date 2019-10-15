@@ -32,7 +32,7 @@ public class TraineeView {
 			case 2:
 				  // checkstatus();
 				   break;
-			case 3://givefeedback();
+			case 3:givefeedback();
 				   break;
 			case 4://cancelcourse();
 				   break;
@@ -55,15 +55,15 @@ public class TraineeView {
 	{
 	  try(Scanner scanner=new Scanner(System.in);){
 			
-			int employeeId=0;
+			int employee_id=0;
 			System.out.print("Employee Id:");
 			
-			employeeId=scanner.nextInt();
+			employee_id=scanner.nextInt();
 			System.out.print("Enter Course name:");
-			String courseName=scanner.next();
+			String course_name=scanner.next();
 			TraineeModel model=new TraineeModel();
-			model.setEmployeeId(employeeId);
-		    model.setCourseName(courseName);
+			model.setEmployee_id(employee_id);
+		    model.setCourse_name(course_name);
 		    TraineeController controller=new TraineeController();
 		    controller.handlecourse(model);
 		    mainTraineeView();
@@ -92,22 +92,22 @@ public class TraineeView {
 		}}catch(Exception e) {
 			
 		}
-	    }
+	    }*/
 	    public void givefeedback()
 	    {
 	      try(Scanner scanner=new Scanner(System.in);){
 		
-		int employeeId=0;
+		int employee_id=0;
 		System.out.print("Employee Id:");
 		if(scanner.hasNextInt()) {
-		employeeId=scanner.nextInt();
+		employee_id=scanner.nextInt();
 		System.out.println("Enter Course Name");
-		String course=scanner.next();
+		String course_name=scanner.next();
 		System.out.println("Give Feedback:");
 		String feedback=scanner.next();
 		FeedbackTraineeModel model=new FeedbackTraineeModel();
-		 model.setEmployeeId(employeeId);
-		 model.setCourseName(course);
+		 model.setEmployee_id(employee_id);
+		 model.setCourse_name(course_name);
 		 model.setFeedback(feedback);
 		 TraineeController controller=new TraineeController();
 		 controller.UpdateFeedback(model);
@@ -116,7 +116,7 @@ public class TraineeView {
 			
 	    }
 	    }
-	    public void cancelcourse()
+	   /* public void cancelcourse()
 	    {
 	       try(Scanner scanner=new Scanner(System.in);){
 		

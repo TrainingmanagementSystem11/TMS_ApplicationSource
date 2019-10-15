@@ -1,5 +1,10 @@
 package com.training.service;
 
-public interface ManagerService {
+import com.training.model.ManagerModel;
 
+public interface ManagerService  {
+
+	public String Approve(ManagerModel model);
+	public String Reject(ManagerModel model);
+	String postTrainigDetails(ManagerModel model);
 }

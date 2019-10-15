@@ -1,20 +1,20 @@
 package com.training.model;
 
 public class FeedbackTraineeModel {
-  private int employeeId;
-  private String courseName;
+  private int employee_id;
+  private String course_name;
   private String feedback;
-public int getEmployeeId() {
-	return employeeId;
+public int getEmployee_id() {
+	return employee_id;
 }
-public void setEmployeeId(int employeeId) {
-	this.employeeId = employeeId;
+public void setEmployee_id(int employee_id) {
+	this.employee_id = employee_id;
 }
-public String getCourseName() {
-	return courseName;
+public String getCourse_name() {
+	return course_name;
 }
-public void setCourseName(String courseName) {
-	this.courseName = courseName;
+public void setCourse_name(String course_name) {
+	this.course_name = course_name;
 }
 public String getFeedback() {
 	return feedback;
@@ -26,8 +26,8 @@ public void setFeedback(String feedback) {
 public int hashCode() {
 	final int prime = 31;
 	int result = 1;
-	result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
-	result = prime * result + employeeId;
+	result = prime * result + ((course_name == null) ? 0 : course_name.hashCode());
+	result = prime * result + employee_id;
 	result = prime * result + ((feedback == null) ? 0 : feedback.hashCode());
 	return result;
 }
@@ -40,12 +40,12 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	FeedbackTraineeModel other = (FeedbackTraineeModel) obj;
-	if (courseName == null) {
-		if (other.courseName != null)
+	if (course_name == null) {
+		if (other.course_name != null)
 			return false;
-	} else if (!courseName.equals(other.courseName))
+	} else if (!course_name.equals(other.course_name))
 		return false;
-	if (employeeId != other.employeeId)
+	if (employee_id != other.employee_id)
 		return false;
 	if (feedback == null) {
 		if (other.feedback != null)
@@ -56,8 +56,8 @@ public boolean equals(Object obj) {
 }
 @Override
 public String toString() {
-	return "FeedbackTraineeModel [employeeId=" + employeeId + ", courseName=" + courseName + ", feedback=" + feedback
-			+ "]";
+	return "FeedbackTraineeModel [employee_id=" + employee_id + ", course_name=" + course_name + ", feedback="
+			+ feedback + "]";
 }
-  
+
 } 
