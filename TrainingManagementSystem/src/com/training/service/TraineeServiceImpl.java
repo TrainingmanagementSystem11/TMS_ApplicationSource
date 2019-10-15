@@ -25,7 +25,7 @@ public class TraineeServiceImpl implements TraineeService {
 	 {
 	
 	        Training training=new Training();
-			training.setEmployeeId(model.getEmployeeId());
+			training.setEmployeeId(model.getEmployee_id());
 			training.setCourseName(model.getCourse_name());
 			boolean result=false;
 			try {
@@ -91,16 +91,18 @@ public class TraineeServiceImpl implements TraineeService {
 	 @Override
 	 public boolean deleteCourse(TraineeModel model){
 	   	List<TraineeModel> traineeList= retrieveEmployees();
-			boolean result=false;
+	   	boolean result=false;
 			boolean traineeFound=false;
 			Training  training=new Training();
 			for(TraineeModel traineeModel: traineeList) {
-				if(traineeModel.getEmployeeId()==model.get
-						EmployeeId()) {
-					training.setEmployeeId(model.getEmployeeId());
+				if(traineeModel.getEmployee_id()==model.getEmployee_id()) {
+					training.setEmployeeId(model.getEmployee_id());
 					training.setCourseName(model.getCourse_name());
+					
 					traineeFound=true;
+					System.out.println("hello");
 					break;
+					
 				}
 			}
 			if(traineeFound) {
@@ -123,7 +125,7 @@ public class TraineeServiceImpl implements TraineeService {
 				}
 			}
 			return result;
-	   
+			
 	 
 	 }
 	 

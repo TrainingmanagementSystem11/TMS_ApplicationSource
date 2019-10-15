@@ -120,15 +120,15 @@ public class TraineeView {
 	    {
 	       try(Scanner scanner=new Scanner(System.in);){
 		
-		int employeeId=0;
+		int employee_id=0;
 		System.out.print("Employee Id:");
 		if(scanner.hasNextInt()) {
-		employeeId=scanner.nextInt();
+			employee_id=scanner.nextInt();
 		System.out.println("Enter Course Name");
-		String course=scanner.next();
+		String course_name=scanner.next();
 	    TraineeModel model=new TraineeModel();
-		model.setEmployee_id(employeeId);
-	    model.setCourse_name(course);
+		model.setEmployee_id(employee_id);
+	    model.setCourse_name(course_name);
 		TraineeController controller=new TraineeController();
 		controller.handleDeleteCourse(model);
 	    mainTraineeView();

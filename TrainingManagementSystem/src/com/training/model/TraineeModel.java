@@ -3,8 +3,9 @@ package com.training.model;
 public class TraineeModel {
  private int employee_id;
  private String course_name;
-public int getEmployeeId() {
-	return employee_id;
+@Override
+public String toString() {
+	return "TraineeModel [employee_id=" + employee_id + ", course_name=" + course_name + "]";
 }
 public int getEmployee_id() {
 	return employee_id;
@@ -17,10 +18,6 @@ public String getCourse_name() {
 }
 public void setCourse_name(String course_name) {
 	this.course_name = course_name;
-}
-@Override
-public String toString() {
-	return "TraineeModel [employee_id=" + employee_id + ", course_name=" + course_name + "]";
 }
 @Override
 public int hashCode() {
@@ -39,6 +36,7 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	TraineeModel other = (TraineeModel) obj;
+	
 	if (course_name == null) {
 		if (other.course_name != null)
 			return false;
@@ -48,6 +46,9 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
+
+
+
 
 }
 

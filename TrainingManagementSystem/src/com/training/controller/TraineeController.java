@@ -20,7 +20,7 @@ public class TraineeController {
 					
 			//if(validator.validate(model)) {
 		     System.out.println(model.getCourse_name());
-		     System.out.println(model.getEmployeeId());
+		     System.out.println(model.getEmployee_id());
 			
 			boolean outcome=traineeService.registerCourse(model);
 			if(outcome==true) {
