@@ -3,18 +3,16 @@ package com.training.service;
 import java.util.List;
 
 import com.training.model.AdminModel;
+import com.training.model.TraineeModel;
 
 public interface AdminService {
+    
 	
-	 default boolean adminAuthenticationService(AdminModel adminModel) {
-		return false;
-		
-	}
-
-	static List<AdminModel> retrieveAdmin() {
+	public List<AdminModel> retrieveAdmin();
 		// TODO Auto-generated method stub
-		return null;
-	}
+		
+	
+	
 
 }
 

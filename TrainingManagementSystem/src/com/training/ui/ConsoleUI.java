@@ -1,5 +1,14 @@
 package com.training.ui;
 
-public class ConsoleUI {
+import com.training.view.AdminView;
+
+public class ConsoleUI 
+{
+	public static void main(String[] args)
+	{
+		AdminView adminView  = new AdminView();
+		adminView.mainAdminMenu();
+		
+	}
 
 }

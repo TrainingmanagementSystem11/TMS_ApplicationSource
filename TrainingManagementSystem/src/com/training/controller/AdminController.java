@@ -6,6 +6,7 @@ import com.training.helper.FactoryAdminDAO;
 import com.training.model.AdminModel;
 import com.training.service.AdminService;
 import com.training.view.AdminView;
+import com.training.view.UpdateAdminModel;
 
 public class AdminController {
 	private AdminService adminService;
@@ -16,18 +17,17 @@ public class AdminController {
 				FactoryAdminDAO.createAdminService();
 	}
 
-	public void handleRetrieveEmployees(RequestorType request) {
 		
-		AdminView AdminView = new AdminView();
-		List<AdminModel> models=AdminService.retrieveAdmin();
-		AdminView mainView=new AdminView();
-		switch(request) {
+  public void numberOfAttendees(){
+	  
 		
-		
-
-		
-		}
+	}
 	
-}
+
+
+	public void handleUpdateDate(UpdateAdminModel model) {
+		// TODO Auto-generated method stub
+		
+	}
 }
 

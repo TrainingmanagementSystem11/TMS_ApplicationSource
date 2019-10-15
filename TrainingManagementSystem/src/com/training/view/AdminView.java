@@ -1,4 +1,4 @@
-package com.training.view;
+ package com.training.view;
 
 
 import java.util.Date;
@@ -8,22 +8,22 @@ import java.util.Scanner;
 
 import javax.xml.bind.ValidationException;
 
+import com.training.controller.AdminController;
 import com.training.controller.TraineeController;
 import com.training.model.AdminModel;
 import com.training.model.TraineeModel;
-import com.virtusa.validation.EmployeesModelValidator;
 public class AdminView 
 {
 	static Scanner scanner=new Scanner(System.in);
+	static AdminModelValidator adminModelValidator = new AdminModelValidator();
 	public static void mainAdminMenu()
   {
 
 		 System.out.println("*Welocome to Admin HomePage**");
 		System.out.println("====================================");
-        System.out.println("1.View History");
-        System.out.println("2.Schedule Training");
-        System.out.println("3.Number Of Attendees");
-        System.out.println("4.Add Venue");
+        System.out.println("1.Schedule Training");
+        System.out.println("2.Number Of Attendees");
+        System.out.println("3.Add Venue");
 		    try{
 			System.out.print("\nOption:");
 			int option=scanner.nextInt();
@@ -47,29 +47,8 @@ public class AdminView
   
 	private static void ScheduleTraining() {
 		// TODO Auto-generated method stub
-    try(Scanner scanner=new Scanner(System.in);){
-			
-			int startDate;
-			int endDate;
-			String courseName;
-			System.out.print("startDate:");
-			System.out.print("endDate:");
-			System.out.print("courseName:");
-			if(scanner.hasNextInt()) {
-				startDate =scanner.nextInt();
-				endDate =scanner.nextInt();
-			}
-			   else {
-				try {
-				throw new ValidationException("[!ERROR:Invalid Date]");
-				}catch(ValidationException e) {
-				 System.out.println(e.getMessage());
-				}
-				mainAdminMenu();  
-			   }	
-          }
      
-    System.out.println("Enter Date(dd-mm-yyyy):");
+    System.out.println("Enter startDate(dd-mm-yyyy):");
     String date =scanner.next();
     Date datex = null;
     boolean flag = true;
@@ -85,7 +64,26 @@ public class AdminView
         }
     }
     while(flag);
-                                 
+	
+	    System.out.println("Enter endDate(dd-mm-yyyy):");
+	    String date1 =scanner.next();
+	    Date datex1 = null;
+	    boolean flag1 = true;
+		do
+	    {
+	        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+	        try {
+	            datex1=dateFormat.parse(date);
+	            flag1=false;
+	        }
+	        catch(Exception e) {
+	            System.out.println("Enter valid date in specified format");
+	        }
+	    }
+	    while(flag);
+		
+	
+	
 	}
 	
 
@@ -94,30 +92,49 @@ public class AdminView
 		String courseName;
 		String venue;
 		System.out.print("courseName:");
-		System.out.print("venue:");
-		if(scanner.hasNextInt()) {
-			courseName = scanner.nextLine();
-			venue = scanner.nextLine();
-		} else {
+		courseName = scanner.next();
+		boolean validCourseName=adminModelValidator.validString(courseName);
+        if(!validCourseName) {
 			try {
 				throw new ValidationException("[!ERROR:Invalid courseName]");
 				}catch(ValidationException e) {
 				 System.out.println(e.getMessage());
+				 AddVenue();
 				}
-			     mainAdminMenu();  
-		}
-	}
+        }
+		
+		System.out.print("venue:");
+		venue = scanner.next();
+		boolean validVenueName=adminModelValidator.validString(venue);
+        if(!validVenueName) {
+			try {
+				throw new ValidationException("[!ERROR:Invalid VenueName]");
+				}catch(ValidationException e) {
+				 System.out.println(e.getMessage());
+				}
+		 	
+        }
 	
+
+		 }
 	public static void NumberOfAttendees() {
 		// TODO Auto-generated method stub
+		String courseName;
+		System.out.print("courseName:");
+		courseName = scanner.next();
+		boolean validCourseName=adminModelValidator.validString(courseName);
+        if(!validCourseName) {
+			try {
+				throw new ValidationException("[!ERROR:Invalid courseName]");
+				}catch(ValidationException e) {
+				 System.out.println(e.getMessage());
+			
+				}
+			
 		
 	}
-
-	public void showstartDate(List<AdminModel> models) {
-		// TODO Auto-generated method stub
-		
+                 AdminController admincontroller  = new AdminController();
+                 admincontroller.numberOfAttendees();
 	}
-
-	
-}
+	}
 
