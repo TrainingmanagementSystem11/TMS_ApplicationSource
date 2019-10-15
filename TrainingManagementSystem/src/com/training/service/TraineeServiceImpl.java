@@ -14,8 +14,11 @@ public class TraineeServiceImpl implements TraineeService {
 
 	    private TraineeDAO traineeDAO;
 	    
-	   
-	    
+	        public TraineeServiceImpl() {
+	            this.traineeDAO=FactoryEmployeeDB.createTraineeDAO();
+	            
+	        }
+ 
 	public boolean registerCourse(TraineeModel model)
 	 {
 	

@@ -21,7 +21,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 				
 				Connection connection=ConnectionManager.openConnection();
 				PreparedStatement statement=
-						connection.prepareStatement("insert into training values(course_name,employee_id)(?,?)");
+						connection.prepareStatement("insert into trainings(course_name,status,feedback,employee_id) values(?,processing,?)");
 				statement.setInt(2,training.getEmployeeId());
 				statement.setString(1,training.getCourseName());
 				int rows=statement.executeUpdate();

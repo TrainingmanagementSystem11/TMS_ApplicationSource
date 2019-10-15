@@ -170,7 +170,7 @@ catch(Exception e) {
 			TrainerModel model=new TrainerModel();
 			model.setEmployeeId(employeeId);
 			TrainerModel controller=new TrainerModel();
-			controller.handleDeleteTraining(model);
+			controller.handleCourse(model);
 			
 		   mainMenu();
 		}catch(Exception e) {

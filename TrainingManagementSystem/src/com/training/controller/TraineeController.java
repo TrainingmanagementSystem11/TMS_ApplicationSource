@@ -19,16 +19,18 @@ public class TraineeController {
 		//	TrainerModelValidator validator=new TrainerModelValidator();
 					
 			//if(validator.validate(model)) {
+		     System.out.println(model.getCourseName());
+		     System.out.println(model.getEmployeeId());
 			
 			boolean outcome=traineeService.registerCourse(model);
 			if(outcome==true) {
 				System.out.println("Course Selected Successfully"); 
-			}else {
+			}else if(outcome==false){
 				System.out.println("Course is not  enrolled"); 
 			}
-		//}else {
-			//System.out.println("Data Validation Failed"); 
-		//}
+		else {
+			System.out.println("Data Validation Failed"); 
+		}
 		//}
 	/*	public void UpdateFeedback(FeedbackTraineeModel model){
 		  String outcome=TraineeService.updatingfeedback(model);

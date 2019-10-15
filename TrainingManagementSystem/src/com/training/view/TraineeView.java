@@ -55,13 +55,13 @@ public class TraineeView {
 	{
 	  try(Scanner scanner=new Scanner(System.in);){
 			
-			int employeeId;
+			int employeeId=0;
 			System.out.print("Employee Id:");
 			
 			employeeId=scanner.nextInt();
 			System.out.print("Enter Course name:");
 			String courseName=scanner.next();
-			TraineeModel  model=new TraineeModel();
+			TraineeModel model=new TraineeModel();
 			model.setEmployeeId(employeeId);
 		    model.setCourseName(courseName);
 		    TraineeController controller=new TraineeController();
