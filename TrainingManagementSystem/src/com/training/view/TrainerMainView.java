@@ -23,7 +23,8 @@ public class TrainerMainView {
 			
 			switch(option) {
 			
-			case 1:postTraining();
+			case 1:
+				postTraining();
 			       break;
 			case 2:
 				 
