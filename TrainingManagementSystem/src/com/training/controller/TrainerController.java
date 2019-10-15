@@ -15,12 +15,13 @@ public class TrainerController {
 	}
 	
 public void handlepostTrainingDetails(PostTrainingDetailsModel model) {
+	String outcome="fail";
 		 {
-		String outcome=trainerService.postTrainingDetails(model);
-		if(outcome.contentEquals("success")) {
-			trainerView.showpostTrainingSuccess(model);	
+		 outcome=trainerService.postTrainingDetails(model);
+		if(outcome.contentEquals("success")){
+			trainerView.postTrainingSuccess(model);	
 		}else {
-			trainerView.showpostTrainingFailure(model);
+			trainerView.postTrainingFailure(model);
 		}
 	}
 }

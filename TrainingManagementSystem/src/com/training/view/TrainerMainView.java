@@ -9,13 +9,13 @@ import com.training.validation.TrainerModelValidator;
 
 public class TrainerMainView {
 	public void mainMenu() {
+		
 		System.out.println("\n");
 		System.out.println("\t \t ========Main Menu========");
 		System.out.println("=>1. Post Training");
 		System.out.println("=>2. View FeedBack");
-		System.out.println("=>3. Training Venue");
-		System.out.println("=>4. Delete Training");
-		System.out.println("=>5. Exit");
+		System.out.println("=>3. view History");
+		System.out.println("=>4. Exit");
 		try(Scanner scanner=new Scanner(System.in);){
 			
 			System.out.print("\nOption:");
@@ -27,13 +27,11 @@ public class TrainerMainView {
 				postTraining();
 			       break;
 			case 2:
-				 
 				   break;
 			case 3:
 				   break;
-			case 4:
-				   break;
-			case 5:System.exit(0);
+			case 4:System.exit(0);;
+			
 			   break;
 			default:System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 			        mainMenu();

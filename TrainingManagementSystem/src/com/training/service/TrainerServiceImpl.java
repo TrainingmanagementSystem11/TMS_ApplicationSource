@@ -29,7 +29,6 @@ private TrainerDAO trainerDAO;
 				System.out.println("!ERROR[ EmployeeId already exists]");
 			}
 		}
-		
 		String result="fail";
 		try {
 			boolean updated=trainerDAO.postTrainingDetails(trainer);

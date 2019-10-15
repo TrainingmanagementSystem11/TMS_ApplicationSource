@@ -19,9 +19,12 @@ public class PostTrainingDetailsModel {
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
+	
 	@Override
 	public String toString() {
-		return "PostTrainingDetailsModel [employeeId=" + employeeId + ", courseName=" + courseName + "]";
+		return "PostTrainingDetailsModel [employeeId=" + employeeId + ", courseName=" + courseName
+				+ ", getEmployeeId()=" + getEmployeeId() + ", getCourseName()=" + getCourseName() + ", hashCode()="
+				+ hashCode() + ", getClass()=" + getClass() + ", toString()=" + super.toString() + "]";
 	}
 	@Override
 	public int hashCode() {

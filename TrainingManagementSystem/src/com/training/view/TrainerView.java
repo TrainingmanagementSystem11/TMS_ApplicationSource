@@ -7,13 +7,13 @@ public class TrainerView {
 	private TrainerMainView mainView=new TrainerMainView();
 
 	
-public void showpostTrainingSuccess(PostTrainingDetailsModel model) {
+public void postTrainingSuccess(PostTrainingDetailsModel model) {
 		
 		System.out.println("\n Updated successful for employee id=>"+model.getEmployeeId());
 		mainView.mainMenu();
 	}
 	
-	public void showpostTrainingFailure(PostTrainingDetailsModel model) {
+	public void postTrainingFailure(PostTrainingDetailsModel model) {
 		System.out.println("\n Update unsuccessful for employee id=>"+model.getEmployeeId());
 		mainView.mainMenu();
 	}
