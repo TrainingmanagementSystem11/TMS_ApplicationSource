@@ -3,7 +3,6 @@ package com.training.ui;
 import java.sql.SQLException;
 
 import com.training.view.LoginView1;
-import com.training.view.TrainerMainView;
 
 public class ClientUI {
 
