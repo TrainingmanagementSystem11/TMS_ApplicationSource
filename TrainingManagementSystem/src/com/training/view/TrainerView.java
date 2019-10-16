@@ -28,4 +28,6 @@ public void postTrainingSuccess(TrainerModel model) {
 	public void validationFailedError() {
 		  System.out.println("Data validation failed!!");
 	  }
+
+	
 }

@@ -1,40 +1,37 @@
 package com.training.service;
 
-import java.sql.SQLException;
-
 import com.training.dao.ManagerDAO;
-import com.training.entities.Manager;
+import com.training.entities.Training;
 import com.training.helper.FactoryManagerDB;
-import com.training.model.ManagerModel;
+import com.training.model.StatusManagerModel;
 
-public abstract  class ManagerServiceImpl implements ManagerService {
+
+public  class ManagerServiceImpl implements ManagerService {
 	
 	private ManagerDAO managerDAO;
 	public ManagerServiceImpl() {
 		this.managerDAO=FactoryManagerDB.createManagerDB();
 	}
+	
 	@Override
-	public String postTrainigDetails(ManagerModel model) {
+	public String UpdateAprroval(StatusManagerModel model) {
 		// TODO Auto-generated method stub
-		Manager manager=new Manager();
-		manager.setEmployeeId(model.getEmployeeId());
-		manager.setManagerId(model.getMangerId());
-		manager.setCourseName(model.getCourseName());
-		manager.setStartDate(model.getStartDate());
-		manager.setEndDate(model.getEndDate());
-		manager.setVenue(model.getVenue());
-		String result="fail";
-		try {
-			boolean stored=managerDAO.PostTrainingDetails(manager);
-			if(stored)
-				result="success";
-		}
-		catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			System.out.println("!ERROR[Feedback updation failed!!]");
-		}
-		return result;
- 
+		
+		Training training=new Training();
+		   training.setEmployeeId(model.getEmployeeId());
+		   training.setCourseName(model.getCourseName());
+		   training.setStatus(model.getStatus());
+		  
+		   String result="fail";
+		   try {
+	 			boolean updated=managerDAO.UpadateApproval(training);
+				if(updated)
+					result="success";
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println("!ERROR[Feedback updation failed!!]");
+			}
+			return result ;
 
 	}
 

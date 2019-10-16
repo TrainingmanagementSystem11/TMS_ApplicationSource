@@ -2,6 +2,7 @@ package com.training.helper;
 
 import com.training.dao.TraineeDAO;
 import com.training.dao.TraineeDAOImpl;
+import com.training.service.ManagerService;
 import com.training.service.TraineeService;
 import com.training.service.TraineeServiceImpl;
 
@@ -15,4 +16,8 @@ public class FactoryEmployeeDB {
     	TraineeService traineeService=new TraineeServiceImpl();
         return traineeService;
     }
+	public static ManagerService createManagerService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

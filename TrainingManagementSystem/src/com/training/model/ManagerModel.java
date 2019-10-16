@@ -3,18 +3,13 @@ package com.training.model;
 import java.time.LocalDate;
 
 public class ManagerModel {
-	private int mangerId;
+	
 	private int employeeId;
 	private String courseName;
 	private LocalDate startDate;
 	private LocalDate endDate;
 	private String venue;
-	public int getMaangerId() {
-		return mangerId;
-	}
-	public void setMaangerId(int maangerId) {
-		this.mangerId = maangerId;
-	}
+
 	public int getEmployeeId() {
 		return employeeId;
 	}
@@ -47,8 +42,8 @@ public class ManagerModel {
 	}
 	@Override
 	public String toString() {
-		return "ManagerModel [maangerId=" + mangerId + ", employeeId=" + employeeId + ", courseName=" + courseName
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", venue=" + venue + "]";
+		return "ManagerModel [employeeId=" + employeeId + ", courseName=" + courseName + ", startDate=" + startDate
+				+ ", endDate=" + endDate + ", venue=" + venue + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -57,7 +52,6 @@ public class ManagerModel {
 		result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
 		result = prime * result + employeeId;
 		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
-		result = prime * result + mangerId;
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
 		result = prime * result + ((venue == null) ? 0 : venue.hashCode());
 		return result;
@@ -83,8 +77,6 @@ public class ManagerModel {
 				return false;
 		} else if (!endDate.equals(other.endDate))
 			return false;
-		if (mangerId != other.mangerId)
-			return false;
 		if (startDate == null) {
 			if (other.startDate != null)
 				return false;
@@ -97,20 +89,8 @@ public class ManagerModel {
 			return false;
 		return true;
 	}
-	public int getMangerId() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	public boolean validate(ManagerModel model) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 	
-	
-	
-		
-		
-		
-	}
+
+}
 

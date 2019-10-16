@@ -52,6 +52,11 @@ public class AdminView {
 	private static void ViewHistory() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public void adminView() {
+		// TODO Auto-generated method stub
+		
 	} 
 }
   

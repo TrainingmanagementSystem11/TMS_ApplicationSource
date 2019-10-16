@@ -1,4 +1,4 @@
-package com.training.view;
+/*package com.training.view;
 
 import java.util.Scanner;
 
@@ -30,3 +30,4 @@ public class LoginView {
 			}
 
 }
+*/

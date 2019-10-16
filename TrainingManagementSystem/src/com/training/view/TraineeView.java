@@ -9,7 +9,7 @@ import com.training.model.TraineeModel;
 
 
 public class TraineeView {
-	public void mainTraineeView() {
+	public  void mainTraineeView() {
 	  
 		
 		System.out.println("\n");
@@ -139,5 +139,6 @@ public class TraineeView {
 	   /* public void viewhistory()
 	    {
 	    }
-       */ 
+       */
+	
     }	

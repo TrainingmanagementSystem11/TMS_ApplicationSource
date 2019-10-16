@@ -1,56 +1,45 @@
 package com.training.controller;
 
-import java.sql.SQLException;
-
-import com.training.dao.ManagerDAO;
-import com.training.entities.Manager;
-import com.training.helper.FactoryManagerDB;
-import com.training.model.ManagerModel;
-import com.training.view.ManagerView;
-
+import com.training.helper.FactoryEmployeeDB;
+import com.training.model.StatusManagerModel;
+import com.training.service.ManagerService;
 
 public class ManagerController {
-
+	private ManagerService managerService;
 	
-	private ManagerDAO managerService;
-	ManagerView managerView=new ManagerView();
 	
 	public ManagerController() {
 		this.managerService=
-				FactoryManagerDB.createManagerDB();
+				FactoryEmployeeDB.createManagerService();
 	}
-	
-public void handlepostTrainingDetails(ManagerModel model) {
+
+	public void handleApproval(StatusManagerModel model) {
+		// TODO Auto-generated method stub
 		
-		ManagerModel validator=new ManagerModel();
-				
-		if(validator.validate(model)) {
-		
-		String outcome=managerService.PostTrainingDetails(model);
+		String outcome=managerService.UpdateAprroval(model);
 		if(outcome.contentEquals("success")) {
-			managerView.postTrainingSuccess(model);	
+			System.out.println("Approved Successfully");
 		}else {
-			managerView.postTrainingSuccess(model);
+			System.out.println("Approval is not Successfully");
 		}
-	}else {
-		managerView.validationFailedError();
+		
 	}
-}
-		public void Approve(Manager model) {
-			String outcome = null;
-			try {
-				outcome = managerService.Approve(model);
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(outcome.contentEquals("success")) {
-				ManagerView.showApprovedSuccessful(model);	
-			}else {
-				ManagerView.showApprovePending(model);
-			}
+
+
+
+	public void handleReject(StatusManagerModel model) {
+		// TODO Auto-generated method stub
+		
 	}
+
+	/*public void handleReject(TraineeModel model) {
+		// TODO Auto-generated method stub
+		String outcome=managerService.updateReject(model);
+		if(outcome.contentEquals("success")) {
+			System.out.println("Rejected Successfully");
+		}else {
+			System.out.println("Rejection is not Successfully");
+		}
+	}*/
+
 }

@@ -1,7 +1,7 @@
 package com.training.entities;
 
 public class Training {
-  private int EmployeeId;
+  private static int EmployeeId;
   private String courseName;
   private String status;
   private String Feedback;
