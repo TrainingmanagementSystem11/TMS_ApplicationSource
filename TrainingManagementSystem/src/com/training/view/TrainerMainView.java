@@ -14,8 +14,7 @@ public class TrainerMainView {
 		System.out.println("\t \t ========Main Menu========");
 		System.out.println("=>1. Post Training");
 		System.out.println("=>2. View FeedBack");
-		System.out.println("=>3. view History");
-		System.out.println("=>4. Exit");
+		System.out.println("=>3. Exit");
 		try(Scanner scanner=new Scanner(System.in);){
 			
 			System.out.print("\nOption:");
@@ -28,11 +27,8 @@ public class TrainerMainView {
 			       break;
 			case 2:
 				   break;
-			case 3:
-				   break;
-			case 4:System.exit(0);;
-			
-			   break;
+			case 3:System.exit(0);
+				   break;			
 			default:System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 			        mainMenu();
 				  

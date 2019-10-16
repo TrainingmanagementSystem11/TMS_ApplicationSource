@@ -2,7 +2,6 @@ package com.training.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import com.training.entities.Trainer;
 import com.training.integrate.ConnectionManager;
@@ -16,9 +15,11 @@ public class TrainerDAOImpl implements TrainerDAO{
 	// TODO Auto-generated method stub
 	Connection connection=ConnectionManager.openConnection();
 	PreparedStatement statement=
-			connection.prepareStatement("update courses set employee_id=? where course_name=?");
-	statement.setInt(1,trainer.getEmployeeId());
-	statement.setString(2, trainer.getCourseName());
+			connection.prepareStatement("insert into course values(?,?)");
+	//System.out.println(trainer.getEmployeeId());
+	//System.out.println(trainer.getCourseName());
+	statement.setString(1, trainer.getCourseName());
+	statement.setInt(2,trainer.getEmployeeId());
 	int rows=statement.executeUpdate();
 	ConnectionManager.closeConnection();
 	if(rows>0)
