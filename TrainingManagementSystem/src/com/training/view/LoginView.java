@@ -1,6 +1,7 @@
-package com.training.view;
+/*package com.training.view;
 
 public class LoginView {
        
 
 }
+*/

@@ -1,14 +1,17 @@
 package com.training.ui;
 
-import com.training.view.TrainerMainView;
+import java.sql.SQLException;
+
+import com.training.view.LoginView1;
 
 public class ClientUI {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-			
-			TrainerMainView mainView=new TrainerMainView();
-			mainView.mainMenu();	
+	    LoginView1 loginView=new LoginView1();
+	    loginView.loginMenu();
+		//TrainerMainView mainView=new TrainerMainView();
+			//mainView.mainMenu();	
 	}
 
 }

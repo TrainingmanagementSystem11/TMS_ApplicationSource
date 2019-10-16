@@ -1,11 +1,11 @@
 package com.training.view;
 
 import com.training.model.PostTrainingDetailsModel;
-<<<<<<< HEAD
+
 import com.training.model.TrainerModel;
-=======
+
 import com.training.model.TrainerViewFeedbackModel;
->>>>>>> refs/heads/master
+
 
 public class TrainerView {
 	
@@ -19,16 +19,17 @@ public void postTrainingSuccess(PostTrainingDetailsModel model) {
 	}
 	
 	public void postTrainingFailure(PostTrainingDetailsModel model) {
-<<<<<<< HEAD
+
 		System.out.println("\n Training Update unsuccessful for employee id=>"+model.getEmployeeId());
 =======
 		System.out.println("\n Update unsuccessful for employee id=>"+model.getEmployeeId());
->>>>>>> refs/heads/master
+
 		mainView.mainMenu();
 	}
 	public void validationFailedError() {
 		  System.out.println("Data validation failed!!");
 	  }
+
 
 	public void showFeedback(TrainerViewFeedbackModel models) {
 		// TODO Auto-generated method stub
@@ -37,4 +38,8 @@ public void postTrainingSuccess(PostTrainingDetailsModel model) {
 		
 	}
 
+
+
+	
+}
 

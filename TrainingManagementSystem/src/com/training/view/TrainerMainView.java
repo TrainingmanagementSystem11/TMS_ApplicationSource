@@ -89,9 +89,14 @@ public class TrainerMainView {
 			
 			PostTrainingDetailsModel model=new PostTrainingDetailsModel();
 			model.setEmployeeId(employeeId);
+<<<<<<< HEAD
+			TrainerModel controller=new TrainerModel();
+			controller.handleCourse(model);
+=======
 			model.setCourseName(courseName);
 			TrainerController controller=new TrainerController();
 			controller.handlepostTrainingDetails(model);
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 			
 		   mainMenu();
 		}catch(Exception e) {
