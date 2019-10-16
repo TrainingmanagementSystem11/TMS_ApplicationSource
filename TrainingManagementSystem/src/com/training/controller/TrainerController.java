@@ -1,36 +1,30 @@
 package com.training.controller;
 
-import com.training.helper.FactoryTrainerService;
-import com.training.model.TrainerModel;
+import com.training.helper.FactoryTrainerDB;
+import com.training.model.PostTrainingDetailsModel;
 import com.training.service.TrainerService;
-
-import com.training.view.LoginView;
 import com.training.view.TrainerView;
 
 public class TrainerController {
-	TrainerService trainerService;
-	public TrainerController(){
-		
-		this.trainerService=FactoryTrainerService.createTrainerService();
+	private TrainerService trainerService;
+	TrainerView trainerView=new TrainerView();
+	
+	public TrainerController() {
+		this.trainerService=
+				FactoryTrainerDB.createTrainerService();
 	}
-	public void trainerAuthentication(String trainerId,String trainerPassword) {
-		
-		TrainerModel trainerModel=new TrainerModel();
-		trainerModel.setTrainerId(trainerId);
-		trainerModel.setTrainerpassword(trainerPassword);
-
-		boolean trainerType=trainerService.trainerAuthenticationService(trainerModel);
-		 if(trainerType==true) {
-		     System.out.println("************************Login Successful****************************");
-				
-		    TrainerView.trainerMenu();
-			
+	
+public void handlepostTrainingDetails(PostTrainingDetailsModel model) {
+	String outcome="fail";
+		 {
+		 outcome=trainerService.postTrainingDetails(model);
+		if(outcome.contentEquals("success")){
+			trainerView.postTrainingSuccess(model);	
 		}else {
-			System.out.println("***Invalid user name or password***");
-			System.out.println("***Please Try Again***");
-			LoginView.trainerLogin();
-		
-		}		
+			trainerView.postTrainingFailure(model);
+		}
 	}
-
 }
+}
+
+		

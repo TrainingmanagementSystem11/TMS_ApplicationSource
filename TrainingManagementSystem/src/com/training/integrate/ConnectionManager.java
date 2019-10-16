@@ -7,7 +7,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
 public class ConnectionManager {
 public static  DataSource dataSource=new DataSource();

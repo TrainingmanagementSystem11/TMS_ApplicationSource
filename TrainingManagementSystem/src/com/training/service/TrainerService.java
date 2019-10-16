@@ -1,9 +1,9 @@
 package com.training.service;
 
-import com.training.model.TrainerModel;
+import com.training.model.PostTrainingDetailsModel;
 
 public interface TrainerService {
-	 default boolean trainerAuthenticationService(TrainerModel trainerModel) {
-			return false;
-}
+	public String postTrainingDetails(PostTrainingDetailsModel model);
+	
+	
 }

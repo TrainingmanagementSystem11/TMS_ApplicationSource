@@ -1,12 +1,12 @@
 package com.training.dao;
 
 import java.sql.SQLException;
-import java.util.List;
+import com.training.entities.Trainer;
 
 public interface TrainerDAO {
-	boolean trainerAuth(String trainerId, String trainerPassword) throws SQLException, ClassNotFoundException;
+	public boolean postTrainingDetails(Trainer trainer)throws ClassNotFoundException, SQLException;
+	//public boolean viewTrainingFeedback(Trainer trainer)throws ClassNotFoundException, SQLException;
 
-	
 }
 	
 
