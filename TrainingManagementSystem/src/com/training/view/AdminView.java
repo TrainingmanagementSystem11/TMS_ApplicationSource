@@ -5,17 +5,18 @@ import java.util.Date;
 import java.util.List;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
-
 import javax.xml.bind.ValidationException;
-
 import com.training.controller.AdminController;
 import com.training.controller.TraineeController;
-import com.training.model.AdminModel;
+import com.training.model.AttendeesAdminModel;
+import com.training.model.ScheduleAdminModel;
 import com.training.model.TraineeModel;
+import com.training.model.VenueAdminModel;
 public class AdminView 
 {
 	static Scanner scanner=new Scanner(System.in);
 	static AdminModelValidator adminModelValidator = new AdminModelValidator();
+	static AdminController admincontroller  = new AdminController();
 	public static void mainAdminMenu()
   {
 
@@ -48,15 +49,15 @@ public class AdminView
 	private static void ScheduleTraining() {
 		// TODO Auto-generated method stub
      
-    System.out.println("Enter startDate(dd-mm-yyyy):");
-    String date =scanner.next();
+    System.out.println("Enter startDate(yyyy-mm-dd):");
+    String start_date =scanner.next();
     Date datex = null;
     boolean flag = true;
 	do
     {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
         try {
-            datex=dateFormat.parse(date);
+            datex=dateFormat.parse(start_date);
             flag=false;
         }
         catch(Exception e) {
@@ -65,15 +66,15 @@ public class AdminView
     }
     while(flag);
 	
-	    System.out.println("Enter endDate(dd-mm-yyyy):");
-	    String date1 =scanner.next();
+	    System.out.println("Enter endDate(yyyy-mm-dd):");
+	    String end_date =scanner.next();
 	    Date datex1 = null;
 	    boolean flag1 = true;
 		do
 	    {
 	        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 	        try {
-	            datex1=dateFormat.parse(date);
+	            datex1=dateFormat.parse(end_date);
 	            flag1=false;
 	        }
 	        catch(Exception e) {
@@ -81,10 +82,21 @@ public class AdminView
 	        }
 	    }
 	    while(flag);
-		
-	
-	
-	}
+		System.out.println("Enter course_name");
+		String course_name =scanner.next();
+		boolean validVenueName=adminModelValidator.validString(course_name);
+        if(!validVenueName) {
+			try {
+				throw new ValidationException("Updated Successfully");
+				}catch(ValidationException e) {
+				 System.out.println(e.getMessage());
+				}	}
+		ScheduleAdminModel scheduleAdminModel = new ScheduleAdminModel();
+		scheduleAdminModel.setStartDate(start_date);
+		scheduleAdminModel.setEndDate(end_date);
+		scheduleAdminModel.setCourse_name(course_name);
+		admincontroller.updateDateController(scheduleAdminModel);
+}
 	
 
 	public static void AddVenue() {
@@ -102,7 +114,6 @@ public class AdminView
 				 AddVenue();
 				}
         }
-		
 		System.out.print("venue:");
 		venue = scanner.next();
 		boolean validVenueName=adminModelValidator.validString(venue);
@@ -111,10 +122,12 @@ public class AdminView
 				throw new ValidationException("[!ERROR:Invalid VenueName]");
 				}catch(ValidationException e) {
 				 System.out.println(e.getMessage());
-				}
-		 	
+				}	
         }
-	
+        VenueAdminModel venueAdminModel = new VenueAdminModel();
+        venueAdminModel.setCourse_name(courseName);
+        venueAdminModel.setVenue(venue);
+        admincontroller.venueController(venueAdminModel);
 
 		 }
 	public static void NumberOfAttendees() {
@@ -131,10 +144,10 @@ public class AdminView
 			
 				}
 			
-		
 	}
-                 AdminController admincontroller  = new AdminController();
-                 admincontroller.numberOfAttendees();
+         		AttendeesAdminModel adminModel = new AttendeesAdminModel();
+         		adminModel.setCourseName(courseName);
+                 admincontroller.numberOfAttendees(adminModel);
 	}
 	}
 

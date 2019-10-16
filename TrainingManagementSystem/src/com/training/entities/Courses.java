@@ -1,6 +1,6 @@
 package com.training.entities;
 public class Courses{
-	String courseName;
+private	String courseName;
  private int course_Id;
  private int employee_Id;
  private int startDate;
