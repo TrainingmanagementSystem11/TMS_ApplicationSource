@@ -9,7 +9,16 @@ public class Trainer{
 	private LocalDate startDate;
 	private LocalDate endDate;
 	private String venue;
+	private String feedback;
 	
+	public String getFeedback() {
+		return feedback;
+	}
+
+	public void setFeedback(String feedback) {
+		this.feedback = feedback;
+	}
+
 	public Trainer() {
 		
 	}
@@ -62,10 +71,13 @@ public class Trainer{
 		this.venue = venue;
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "Trainer [courseId=" + courseId + ", employeeId=" + employeeId + ", courseName=" + courseName
-				+ ", startDate=" + startDate + ", endDate=" + endDate + ", venue=" + venue + "]";
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", venue=" + venue + ", feedback=" + feedback
+				+ "]";
 	}
 
 	@Override
@@ -76,6 +88,7 @@ public class Trainer{
 		result = prime * result + ((courseName == null) ? 0 : courseName.hashCode());
 		result = prime * result + employeeId;
 		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
+		result = prime * result + ((feedback == null) ? 0 : feedback.hashCode());
 		result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
 		result = prime * result + ((venue == null) ? 0 : venue.hashCode());
 		return result;
@@ -104,6 +117,11 @@ public class Trainer{
 				return false;
 		} else if (!endDate.equals(other.endDate))
 			return false;
+		if (feedback == null) {
+			if (other.feedback != null)
+				return false;
+		} else if (!feedback.equals(other.feedback))
+			return false;
 		if (startDate == null) {
 			if (other.startDate != null)
 				return false;
@@ -117,4 +135,4 @@ public class Trainer{
 		return true;
 	}
 
-	}
+}

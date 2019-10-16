@@ -25,7 +25,7 @@ public class TrainerMainView {
 			case 1:
 				postTraining();
 			       break;
-			case 2:
+			case 2:viewFeedback();
 				   break;
 			case 3:System.exit(0);
 				   break;			
@@ -39,6 +39,21 @@ public class TrainerMainView {
 			System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 		}
 		
+	}
+
+	private void viewFeedback() {
+		// TODO Auto-generated method stub
+		 TrainerController trainerController=new TrainerController();
+         
+         try(Scanner scanner=new Scanner(System.in);){
+             System.out.print("Please Enter Employee Id:");
+             int employeeId=scanner.nextInt();
+             trainerController.handleRetrieveFeedback(employeeId);
+            
+            
+         }catch(Exception e) {
+             e.printStackTrace();
+         }
 	}
 
 	private void postTraining() {

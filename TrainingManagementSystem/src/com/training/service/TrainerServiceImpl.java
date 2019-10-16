@@ -6,6 +6,11 @@ import com.training.entities.Trainer;
 import com.training.exception.EmployeeIdValidException;
 import com.training.helper.FactoryTrainerDB;
 import com.training.model.PostTrainingDetailsModel;
+<<<<<<< HEAD
+import com.training.model.ViewFeedbackModel;
+=======
+import com.training.model.TrainerViewFeedbackModel;
+>>>>>>> refs/heads/master
 
 public class TrainerServiceImpl implements TrainerService {
 	
@@ -49,5 +54,24 @@ private TrainerDAO trainerDAO;
 =======
 >>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 	}
+
+	@Override
+<<<<<<< HEAD
+	public String viewTrainingFeedback(ViewFeedbackModel model) {
+		// TODO Auto-generated method stub
+		return null;
+=======
+	public TrainerViewFeedbackModel retrieveFeedback(int employeeId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+>>>>>>> refs/heads/master
+	}
+
+	
+	
+	}
+
+	
+	
 	
