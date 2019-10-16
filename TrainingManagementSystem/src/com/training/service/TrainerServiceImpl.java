@@ -6,6 +6,7 @@ import com.training.entities.Trainer;
 import com.training.exception.EmployeeIdValidException;
 import com.training.helper.FactoryTrainerDB;
 import com.training.model.PostTrainingDetailsModel;
+import com.training.model.TrainerViewFeedbackModel;
 
 public class TrainerServiceImpl implements TrainerService {
 	
@@ -39,6 +40,12 @@ private TrainerDAO trainerDAO;
 			System.out.println("!ERROR[Training updation failed!!]");
 		}
 		return result;
+	}
+
+	@Override
+	public TrainerViewFeedbackModel retrieveFeedback(int employeeId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	}
 	

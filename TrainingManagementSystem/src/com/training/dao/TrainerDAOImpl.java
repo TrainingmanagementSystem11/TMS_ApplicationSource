@@ -15,7 +15,7 @@ public class TrainerDAOImpl implements TrainerDAO{
 	// TODO Auto-generated method stub
 	Connection connection=ConnectionManager.openConnection();
 	PreparedStatement statement=
-			connection.prepareStatement("insert into course values(?,?)");
+			connection.prepareStatement("insert into trainings(course_name,employee_id) values(?,?)");
 	//System.out.println(trainer.getEmployeeId());
 	//System.out.println(trainer.getCourseName());
 	statement.setString(1, trainer.getCourseName());
