@@ -9,13 +9,12 @@ import com.training.validation.TrainerModelValidator;
 
 public class TrainerMainView {
 	public void mainMenu() {
+		
 		System.out.println("\n");
 		System.out.println("\t \t ========Main Menu========");
 		System.out.println("=>1. Post Training");
 		System.out.println("=>2. View FeedBack");
-		System.out.println("=>3. Training Venue");
-		System.out.println("=>4. Delete Training");
-		System.out.println("=>5. Exit");
+		System.out.println("=>3. Exit");
 		try(Scanner scanner=new Scanner(System.in);){
 			
 			System.out.print("\nOption:");
@@ -23,17 +22,13 @@ public class TrainerMainView {
 			
 			switch(option) {
 			
-			case 1:postTraining();
+			case 1:
+				postTraining();
 			       break;
-			case 2:
-				 
+			case 2:viewFeedback();
 				   break;
-			case 3:
-				   break;
-			case 4:
-				   break;
-			case 5:System.exit(0);
-			   break;
+			case 3:System.exit(0);
+				   break;			
 			default:System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 			        mainMenu();
 				  
@@ -44,6 +39,21 @@ public class TrainerMainView {
 			System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 		}
 		
+	}
+
+	private void viewFeedback() {
+		// TODO Auto-generated method stub
+		 TrainerController trainerController=new TrainerController();
+         
+         try(Scanner scanner=new Scanner(System.in);){
+             System.out.print("Please Enter Employee Id:");
+             int employeeId=scanner.nextInt();
+             trainerController.handleRetrieveFeedback(employeeId);
+            
+            
+         }catch(Exception e) {
+             e.printStackTrace();
+         }
 	}
 
 	private void postTraining() {

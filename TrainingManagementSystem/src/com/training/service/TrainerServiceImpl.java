@@ -6,7 +6,11 @@ import com.training.entities.Trainer;
 import com.training.exception.EmployeeIdValidException;
 import com.training.helper.FactoryTrainerDB;
 import com.training.model.PostTrainingDetailsModel;
+<<<<<<< HEAD
 import com.training.model.ViewFeedbackModel;
+=======
+import com.training.model.TrainerViewFeedbackModel;
+>>>>>>> refs/heads/master
 
 public class TrainerServiceImpl implements TrainerService {
 	
@@ -30,7 +34,6 @@ private TrainerDAO trainerDAO;
 				System.out.println("!ERROR[ EmployeeId already exists]");
 			}
 		}
-		
 		String result="fail";
 		try {
 			boolean updated=trainerDAO.postTrainingDetails(trainer);
@@ -44,9 +47,16 @@ private TrainerDAO trainerDAO;
 	}
 
 	@Override
+<<<<<<< HEAD
 	public String viewTrainingFeedback(ViewFeedbackModel model) {
 		// TODO Auto-generated method stub
 		return null;
+=======
+	public TrainerViewFeedbackModel retrieveFeedback(int employeeId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+>>>>>>> refs/heads/master
 	}
 
 	

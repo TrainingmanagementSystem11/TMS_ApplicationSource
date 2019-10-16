@@ -7,9 +7,8 @@ import com.training.model.ViewFeedbackModel;
 
 public interface TrainerDAO {
 	public boolean postTrainingDetails(Trainer trainer)throws ClassNotFoundException, SQLException;
-	public boolean viewTrainingFeedback(Trainer trainer)throws ClassNotFoundException, SQLException;
-	public boolean deleteTrainingDetails(Trainer trainer)throws ClassNotFoundException, SQLException;
-	
+	//public boolean viewTrainingFeedback(Trainer trainer)throws ClassNotFoundException, SQLException;
+
 }
 	
 
