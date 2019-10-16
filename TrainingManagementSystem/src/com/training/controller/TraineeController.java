@@ -1,13 +1,17 @@
 package com.training.controller;
 
+<<<<<<< HEAD
 import com.training.helper.FactoryEmployeeDB;
 import com.training.model.FeedbackTraineeModel;
 import com.training.model.TraineeModel;
 import com.training.service.TraineeService;
 import com.training.validation.TrainerModelValidator;
 import com.training.view.TraineeView;
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
 public class TraineeController {
+<<<<<<< HEAD
 	public TraineeService traineeService;
 	
  public TraineeController() {
@@ -57,3 +61,6 @@ public class TraineeController {
 
 	 }*/
 	 }
+=======
+}
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

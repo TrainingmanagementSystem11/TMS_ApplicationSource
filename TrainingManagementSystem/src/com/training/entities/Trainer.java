@@ -1,8 +1,8 @@
-package com.training.model;
+package com.training.entities;
 
 import java.time.LocalDate;
 
-public class TrainerModel {
+public class Trainer{
 	private int courseId;
 	private int employeeId;
 	private String courseName;
@@ -10,7 +10,7 @@ public class TrainerModel {
 	private LocalDate endDate;
 	private String venue;
 	
-	public TrainerModel() {
+	public Trainer() {
 		
 	}
 
@@ -64,7 +64,7 @@ public class TrainerModel {
 
 	@Override
 	public String toString() {
-		return "TrainerModel [courseId=" + courseId + ", employeeId=" + employeeId + ", courseName=" + courseName
+		return "Trainer [courseId=" + courseId + ", employeeId=" + employeeId + ", courseName=" + courseName
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", venue=" + venue + "]";
 	}
 
@@ -89,7 +89,7 @@ public class TrainerModel {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TrainerModel other = (TrainerModel) obj;
+		Trainer other = (Trainer) obj;
 		if (courseId != other.courseId)
 			return false;
 		if (courseName == null) {
@@ -116,14 +116,5 @@ public class TrainerModel {
 			return false;
 		return true;
 	}
-<<<<<<< HEAD
-
-	
 
 	}
-
-
-	
-=======
-}
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

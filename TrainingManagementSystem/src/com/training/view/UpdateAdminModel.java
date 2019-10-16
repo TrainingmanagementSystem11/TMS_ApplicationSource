@@ -1,8 +1,5 @@
 package com.training.view;
 
-
-public class LogoutView {
-	
-	
+public class UpdateAdminModel {
 
 }

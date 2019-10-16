@@ -1,36 +1,51 @@
 package com.training.controller;
 
-import com.training.helper.FactoryAdminService;
-import com.training.model.AdminModel;
+<<<<<<< HEAD
+import java.net.Authenticator.RequestorType;
+import java.util.List;
+import com.training.helper.FactoryAdminDAO;
+import com.training.model.AttendeesAdminModel;
+import com.training.model.ScheduleAdminModel;
+import com.training.model.VenueAdminModel;
 import com.training.service.AdminService;
+import com.training.service.AdminServiceImpl;
 import com.training.view.AdminView;
-import com.training.view.LoginView;
+import com.training.view.UpdateAdminModel;
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 public class AdminController {
-	AdminService adminService;
-	public AdminController(){
-		
-		this.adminService=FactoryAdminService.createAdminService();
+<<<<<<< HEAD
+	private AdminService adminService;
+	AdminView employeeView=new AdminView();
+	
+	public AdminController() {
+		this.adminService=
+				FactoryAdminDAO.createAdminService();
 	}
-	public void adminAuthentication(String adminId,String adminPassword) {
-		
-		AdminModel adminModel=new AdminModel();
-		adminModel.setAdminId(adminId);
-		adminModel.setAdminPassword(adminPassword);
 
-		boolean adminType=adminService.adminAuthenticationService(adminModel);
-		 if(adminType==true) {
-		     System.out.println("************************Login Successful****************************");
-				
-		     AdminView.adminMenu();
-			
-		}else {
-			System.out.println("***Invalid user name or password***");
-			System.out.println("***Please Try Again***");
-			LoginView.adminLogin();
 		
-		}		
+  public void numberOfAttendees(AttendeesAdminModel adminModel)
+  {
+	  
+	  AdminService adminService = new AdminServiceImpl();
+	  adminService.attendeesService(adminModel);
+		
+  }
+	
+	public void venueController(VenueAdminModel venueAdminModel)
+	{
+		AdminService adminService = new AdminServiceImpl();
+		adminService.venueService(venueAdminModel);
+		
 	}
+	
+	public void updateDateController(ScheduleAdminModel scheduleAdminModel)
+	{
+		AdminService adminService = new AdminServiceImpl(); {
+		 adminService.updateDateService(scheduleAdminModel);	
+		}
+	}
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 }
-
-

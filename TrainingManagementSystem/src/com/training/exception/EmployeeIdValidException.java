@@ -1,9 +1,9 @@
 package com.training.exception;
 
-public class NoTrainingFoundException extends Exception {
+public class EmployeeIdValidException extends Exception {
 
 	String message;
-	public NoTrainingFoundException(String message) {
+	public EmployeeIdValidException(String message) {
 		this.message=message;
 	}
 	public String getMessage() {
