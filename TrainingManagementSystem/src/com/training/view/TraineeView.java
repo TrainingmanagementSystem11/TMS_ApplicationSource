@@ -1,6 +1,5 @@
 package com.training.view;
 
-<<<<<<< HEAD
 import java.util.Scanner;
 
 import javax.xml.bind.ValidationException;
@@ -9,12 +8,10 @@ import com.training.controller.TraineeController;
 
 import com.training.model.FeedbackTraineeModel;
 import com.training.model.TraineeModel;
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 
 
 public class TraineeView {
-<<<<<<< HEAD
 	public  void mainTraineeView() {
 	  
 		
@@ -142,14 +139,12 @@ public class TraineeView {
 		System.out.println("[!Error processing request. Please try again later]");
 	}
 	    }
+}
+	    
 	   /* public void viewhistory()
 	    {
 	    }
        */
-	
-    }	
-=======
+
 	
 	
-}
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

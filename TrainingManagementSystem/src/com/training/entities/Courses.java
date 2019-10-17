@@ -1,5 +1,4 @@
 package com.training.entities;
-<<<<<<< HEAD
 
 public class Courses {
  private int courseId;
@@ -88,8 +87,7 @@ public String toString() {
 }
  
 }
-=======
-public class Courses{
+/*public class Courses{
 private	String courseName;
  private int course_Id;
  private int employee_Id;
@@ -167,3 +165,4 @@ public boolean equals(Object obj) {
 }
 }
 >>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+*/

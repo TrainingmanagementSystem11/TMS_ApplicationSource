@@ -1,17 +1,14 @@
 package com.training.service;
 
+import java.util.ArrayList;
+import java.util.List;
 
-<<<<<<< HEAD
 import com.training.dao.TraineeDAO;
 import com.training.entities.Training;
 import com.training.helper.FactoryEmployeeDB;
 import com.training.model.FeedbackTraineeModel;
-import com.training.model.FullTraineeModel;
 import com.training.model.TraineeModel;
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
-<<<<<<< HEAD
 public class TraineeServiceImpl implements TraineeService {
 	
 		 
@@ -133,7 +130,5 @@ public class TraineeServiceImpl implements TraineeService {
 	 
 	}
 
-=======
-public class TraineeServiceImpl {
-}
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
+

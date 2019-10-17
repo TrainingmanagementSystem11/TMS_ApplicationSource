@@ -14,33 +14,37 @@ public class TrainerController {
 		this.trainerService=
 				FactoryTrainerDB.createTrainerService();
 	}
-	
+
 public void handlepostTrainingDetails(PostTrainingDetailsModel model) {
 	String outcome="fail";
-		 {
-<<<<<<< HEAD
-		String outcome=trainerService.postTrainingDetails(model);
-		if(outcome.contentEquals("success")) {
-=======
-		 outcome=trainerService.postTrainingDetails(model);
-		if(outcome.contentEquals("success")){
->>>>>>> refs/heads/master
+	{
+		String outcome1=trainerService.postTrainingDetails(model);
+		if(outcome1.contentEquals("success")) {
+        outcome1=trainerService.postTrainingDetails(model);
+		if(outcome1.contentEquals("success")){
 			trainerView.postTrainingSuccess(model);	
 		}else {
 			trainerView.postTrainingFailure(model);
 		}
+		}
 	}
 }
-
-public void handleRetrieveFeedback(int employeeId) {
-	// TODO Auto-generated method stub
-	TrainerViewFeedbackModel trainer=trainerService.retrieveFeedback(employeeId);
-	   
-     trainerView.showFeedback(trainer);
- }
-
-	
+	public void handleviewFeedbackDetails(TrainerViewFeedbackModel model) {
+		String outcome="fail";
+		{
+			String outcome1=trainerService.viewTrainingFeedback(model);
+			if(outcome1.contentEquals("success")) {
+	        outcome1=trainerService.viewTrainingFeedback(model);
+			if(outcome1.contentEquals("success")){
+				trainerView.viewTrainingFeedbackSuccess(model);	
+			}else {
+				trainerView.viewTrainingFeedbackFailure(model);
+			}
 }
+}
+	}
+	}	
+
 
 
 		
