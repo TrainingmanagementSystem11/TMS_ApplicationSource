@@ -2,34 +2,74 @@ package com.training.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+//import java.sql.Statement;
 
+import com.training.entities.Courses;
 import com.training.integrate.ConnectionManager;
+import com.training.model.AttendeesAdminModel;
+import com.training.model.ScheduleAdminModel;
+import com.training.model.VenueAdminModel;
 
 public class AdminDAOImpl implements AdminDAO {
 
 	@Override
-	public boolean adminAuth(String adminId,String adminPassword) throws SQLException, ClassNotFoundException {
+	public boolean updateDate(ScheduleAdminModel scheduleAdminModel) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		//System.out.println(adminId);
-		//System.out.println(adminPassword);
-			Connection connection=ConnectionManager.openConnection();
-			boolean flag=false;
-			PreparedStatement statement = connection.prepareStatement("select admin_id, admin_Password from adminLogin where admin_Id=? and admin_Password=?");
-			statement.setString(1, adminId);
-			statement.setString(2, adminPassword);
- 			int results=statement.executeUpdate();
-			//ResultSet results=statement.executeQuery();
-			//System.out.println(results);
-			 ConnectionManager.closeConnection();
-			 if(results==1) {
-				
-				 return true;
-			 }else {
-				 //System.out.println("false");
-				 return false;
-			 }
+	
+		Connection connection=ConnectionManager.openConnection();
+PreparedStatement statement=
+    connection.prepareStatement("update courses set start_date=?,end_date=? where course_name=?");
+statement.setString(1,scheduleAdminModel.getStartDate());
+statement.setString(2,scheduleAdminModel.getEndDate());
+statement.setString(3,scheduleAdminModel.getCourse_name());
+  
+    int rows=statement.executeUpdate();
+	ConnectionManager.closeConnection();
+	if(rows>0)
+		return true;
+	 else 
+	   return false;
 	}
+    public ResultSet Numberofattendees(AttendeesAdminModel adminModel)throws ClassNotFoundException, SQLException
+    {
+    	
+	Connection connection=ConnectionManager.openConnection();
+	PreparedStatement statement=
+		    connection.prepareStatement("select count(*) from courses where course_name=?");
+	  statement.setString(1, adminModel.getCourseName());
+	ResultSet resultSet=
+			statement.executeQuery();
+    Courses courses = new Courses(); 
+	while(resultSet.next())
+	{
+		courses.setCourseName(resultSet.getString(1));
+	}
+	return resultSet;
+	//System.out.println("Number of attendees for course"+resultSet);
+    }
+	@Override
+	public boolean updateVenue(VenueAdminModel venueAdminModel)throws ClassNotFoundException, SQLException
+	{
+		// TODO Auto-generated method stub
+		Connection connection=ConnectionManager.openConnection();
+		PreparedStatement statement=
+		    connection.prepareStatement("update courses set venue=? where course_name=?");
+		    statement.setString(1,venueAdminModel.getCourse_name());
+		    statement.setString(2,venueAdminModel.getVenue());
+		    int rows=statement.executeUpdate();
+			ConnectionManager.closeConnection();
+			if(rows>0) 
+				return true;
+			else  
+			   return false;
+			}
 		
-}
+	}	
+	
+	
+
+	
+
 

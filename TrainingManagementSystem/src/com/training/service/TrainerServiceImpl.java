@@ -44,6 +44,15 @@ private TrainerDAO trainerDAO;
 			System.out.println("!ERROR[Training updation failed!!]");
 		}
 		return result;
+<<<<<<< HEAD
+
+}
+	@Override
+	public String deleteTrainingDetails(TrainerModel model) {
+		// TODO Auto-generated method stub
+		return null;
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 	}
 
 	@Override

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+
 	<name>TMS_ApplicationSource3</name>
+=======
+	<name>TMS_ApplicationSource</name>
+
 	<comment></comment>
 	<projects>
 	</projects>
