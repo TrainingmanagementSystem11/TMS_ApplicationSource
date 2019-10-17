@@ -1,56 +1,42 @@
 package com.training.integrate;
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
-
 public class ConnectionManager {
 public static  DataSource dataSource=new DataSource();
-<<<<<<< HEAD
+
 	
-	private static Connection connection=null;
-	public static Connection openConnection() throws ClassNotFoundException,SQLException {
+	private static Connection connection1=null;
+	public static Connection openConnection1() throws ClassNotFoundException,SQLException {
 		
 		Class.forName(dataSource.getDriver());
-		connection=DriverManager.getConnection(dataSource.getUrl(),dataSource.getUsername(),dataSource.getPassword());
-		return connection;
+		connection1=DriverManager.getConnection(dataSource.getUrl(),dataSource.getUsername(),dataSource.getPassword());
+		return connection1;
 		
 	}
 	
-	public static void closeConnection() throws SQLException{
+	public static void closeConnection1() throws SQLException{
 		
-		connection.close();
+		connection1.close();
 	}
-=======
-    
+
     private static Connection connection=null;
     public static Connection openConnection() throws ClassNotFoundException,SQLException {
         
         Class.forName(dataSource.getDriver());
-        connection=DriverManager.getConnection(dataSource.getUrl(),dataSource.getUsername(),dataSource.getPassword());
-        return connection;
+        connection1=DriverManager.getConnection(dataSource.getUrl(),dataSource.getUsername(),dataSource.getPassword());
+        return connection1;
         
     }
     
     public static void closeConnection() throws SQLException{
         
-        connection.close();
+        connection1.close();
     }
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 }
  
 

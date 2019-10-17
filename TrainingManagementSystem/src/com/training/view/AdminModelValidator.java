@@ -10,7 +10,7 @@ public boolean validString(String val) {
 		boolean result=false;
 		char chars[]=val.toCharArray();
 		List<Character> alphabets=new ArrayList<>();
-		for(int i=97;i<=122;i++) {
+		for(int i=65;i<=122;i++) {
 			alphabets.add((char)i);
 		}
 		

@@ -10,8 +10,6 @@ public class ClientUI {
 		// TODO Auto-generated method stub
 	    LoginView1 loginView=new LoginView1();
 	    loginView.loginMenu();
-		//TrainerMainView mainView=new TrainerMainView();
-			//mainView.mainMenu();	
 	}
 
 }
