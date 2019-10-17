@@ -131,7 +131,7 @@ public class AdminView
         venueAdminModel.setVenue(venue);
         admincontroller.venueController(venueAdminModel);
         System.out.println("venue updated successfully");
-        mainAdminMenu();
+        //mainAdminMenu();
 
 		 }
 	public static void NumberOfAttendees() {

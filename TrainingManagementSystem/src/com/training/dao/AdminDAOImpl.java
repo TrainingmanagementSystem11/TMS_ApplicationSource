@@ -56,7 +56,7 @@ statement.setString(3,scheduleAdminModel.getCourse_name());
 		// TODO Auto-generated method stub
 		Connection connection=ConnectionManager.openConnection();
 		PreparedStatement statement=
-		    connection.prepareStatement("update courses(course_name,venue) set venue=? where course_name=?");
+		    connection.prepareStatement("update courses set venue=? where course_name=?");
 		 	statement.setString(1,venueAdminModel.getVenue());
 		    statement.setString(2,venueAdminModel.getCourse_name());
 		    int rows=statement.executeUpdate();
