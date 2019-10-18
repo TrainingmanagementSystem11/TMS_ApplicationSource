@@ -1,5 +1,6 @@
 package com.training.service;
 
+import java.sql.ResultSet;
 import java.util.List;
 import com.training.model.AttendeesAdminModel;
 import com.training.model.ScheduleAdminModel;

@@ -1,6 +1,9 @@
 package com.training.controller;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 import com.training.helper.FactoryEmployeeDB;
 import com.training.model.FeedbackTraineeModel;
 import com.training.model.StatusManagerModel;
@@ -8,10 +11,16 @@ import com.training.model.TraineeModel;
 import com.training.service.TraineeService;
 //import com.training.validation.TrainerModelValidator;
 import com.training.view.TraineeView;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
 public class TraineeController {
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 	public TraineeService traineeService;
 	TraineeView traineeView=new TraineeView();
  public TraineeController() {
@@ -56,6 +65,17 @@ public class TraineeController {
 				System.out.println("Nominee cancelled successfully");
 			}else {
 				System.out.println("Nominee is not cancelled successfully");
+<<<<<<< HEAD
+=======
+}	
+	      }
+	      
+}
+	/*	public void handlestatus(TraineeModel model) {
+			// TODO Auto-generated method stub
+			
+	
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 }
 			
 	      }
@@ -66,6 +86,12 @@ public class TraineeController {
 		
 	     }
 
+<<<<<<< HEAD
 	 
 
 }
+=======
+	 }*/
+	 
+
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

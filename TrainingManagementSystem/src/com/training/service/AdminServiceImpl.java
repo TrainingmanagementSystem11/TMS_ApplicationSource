@@ -1,5 +1,6 @@
 package com.training.service;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -24,8 +25,9 @@ public class AdminServiceImpl implements AdminService{
 		public boolean attendeesService(AttendeesAdminModel adminModel) 
 		{
 			AdminDAO adminDAO = new AdminDAOImpl();
+			ResultSet count = null;
 			try {
-				adminDAO.Numberofattendees(adminModel);
+				 count=adminDAO.Numberofattendees(adminModel);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -33,7 +35,7 @@ public class AdminServiceImpl implements AdminService{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			return false;
+			return true;
 		}
 		/*@Override
 		public boolean adminAuthenticationService(AdminModel adminModel) {

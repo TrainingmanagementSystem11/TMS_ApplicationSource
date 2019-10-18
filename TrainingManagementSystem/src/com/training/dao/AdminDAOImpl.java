@@ -7,6 +7,7 @@ import java.sql.SQLException;
 //import java.sql.Statement;
 
 import com.training.entities.Courses;
+import com.training.entities.Training;
 import com.training.integrate.ConnectionManager;
 import com.training.model.AttendeesAdminModel;
 import com.training.model.ScheduleAdminModel;
@@ -37,14 +38,14 @@ statement.setString(3,scheduleAdminModel.getCourse_name());
     	
 	Connection connection=ConnectionManager.openConnection();
 	PreparedStatement statement=
-		    connection.prepareStatement("select count(*) from courses where course_name=?");
+		    connection.prepareStatement("select count(*) from trainings where course_name=?");
 	  statement.setString(1, adminModel.getCourseName());
 	ResultSet resultSet=
 			statement.executeQuery();
-    Courses courses = new Courses(); 
+  Training training=new Training();
 	while(resultSet.next())
 	{
-		courses.setCourseName(resultSet.getString(1));
+		training.setCourseName(resultSet.getString(1));
 	}
 	return resultSet;
 	//System.out.println("Number of attendees for course"+resultSet);
@@ -56,8 +57,8 @@ statement.setString(3,scheduleAdminModel.getCourse_name());
 		Connection connection=ConnectionManager.openConnection();
 		PreparedStatement statement=
 		    connection.prepareStatement("update courses set venue=? where course_name=?");
-		    statement.setString(1,venueAdminModel.getCourse_name());
-		    statement.setString(2,venueAdminModel.getVenue());
+		 	statement.setString(1,venueAdminModel.getVenue());
+		    statement.setString(2,venueAdminModel.getCourse_name());
 		    int rows=statement.executeUpdate();
 			ConnectionManager.closeConnection();
 			if(rows>0) 
@@ -66,7 +67,7 @@ statement.setString(3,scheduleAdminModel.getCourse_name());
 			   return false;
 			}
 		
-	}	
+	}	   
 	
 	
 

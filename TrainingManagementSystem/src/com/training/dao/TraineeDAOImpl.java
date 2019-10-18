@@ -7,16 +7,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.List;
 import java.util.logging.Logger;
 
+=======
+import java.util.List;
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 import com.training.entities.Training;
 import com.virtusa.integrate.ConnectionManager;
 
 public class TraineeDAOImpl implements TraineeDAO {
 
+<<<<<<< HEAD
 
 	    Logger logger=Logger.getLogger(TraineeDAOImpl.class.getName());
+=======
+		 
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 		 @Override
 			public boolean storecourseDetails(Training training) throws ClassNotFoundException, SQLException {
 				// TODO Auto-generated method stub
@@ -81,6 +89,7 @@ public class TraineeDAOImpl implements TraineeDAO {
 			else
 			return false;
 		}
+<<<<<<< HEAD
 			@Override
 			public Training getStatus(int employee_id, String course_name) throws ClassNotFoundException, SQLException {
 				// TODO Auto-generated method stub
@@ -103,6 +112,8 @@ public class TraineeDAOImpl implements TraineeDAO {
         
 			}
 			
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 		}
 
 

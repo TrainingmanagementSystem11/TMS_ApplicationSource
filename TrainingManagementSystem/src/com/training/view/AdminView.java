@@ -96,6 +96,8 @@ public class AdminView
 		scheduleAdminModel.setEndDate(end_date);
 		scheduleAdminModel.setCourse_name(course_name);
 		admincontroller.updateDateController(scheduleAdminModel);
+		System.out.println("Schedule Training updated successfully");
+		mainAdminMenu();
 }
 	
 
@@ -128,6 +130,8 @@ public class AdminView
         venueAdminModel.setCourse_name(courseName);
         venueAdminModel.setVenue(venue);
         admincontroller.venueController(venueAdminModel);
+        System.out.println("venue updated successfully");
+        //mainAdminMenu();
 
 		 }
 	public static void NumberOfAttendees() {
@@ -141,15 +145,40 @@ public class AdminView
 				throw new ValidationException("[!ERROR:Invalid courseName]");
 				}catch(ValidationException e) {
 				 System.out.println(e.getMessage());
-			
+			     NumberOfAttendees();
 				}
 			
 	}
-         		AttendeesAdminModel adminModel = new AttendeesAdminModel();
-         		adminModel.setCourseName(courseName);
-                 admincontroller.numberOfAttendees(adminModel);
+        AttendeesAdminModel adminModel = new AttendeesAdminModel();
+ 		adminModel.setCourseName(courseName);
+ 		//System.out.println(adminModel.getCourseName());
+         admincontroller.numberOfAttendees(adminModel);
+         mainAdminMenu();
+         		
 	}
 	
-}
-  
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
+	 
+=======
+	private static void ViewHistory() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void adminView() {
+		// TODO Auto-generated method stub
+	}
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+}
+<<<<<<< HEAD
+  
+<<<<<<< HEAD
+
+=======
+=======
+	
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

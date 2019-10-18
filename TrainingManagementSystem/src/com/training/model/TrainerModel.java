@@ -116,6 +116,7 @@ public class TrainerModel {
 			return false;
 		return true;
 	}
+<<<<<<< HEAD
 
 
 	
@@ -124,3 +125,7 @@ public class TrainerModel {
 	
 
 }
+=======
+	}
+
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

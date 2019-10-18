@@ -1,20 +1,32 @@
 package com.training.service;
 
+<<<<<<< HEAD
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
+=======
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
 import com.training.dao.TraineeDAO;
 import com.training.dao.TraineeDAOImpl;
 import com.training.entities.Training;
 import com.training.helper.FactoryEmployeeDB;
 import com.training.model.FeedbackTraineeModel;
+<<<<<<< HEAD
 import com.training.model.FullTraineeModel;
 import com.training.model.StatusManagerModel;
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 import com.training.model.TraineeModel;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 public class TraineeServiceImpl implements TraineeService {
 	
 		 
@@ -96,6 +108,7 @@ public class TraineeServiceImpl implements TraineeService {
 	 
 	 }
 
+<<<<<<< HEAD
 	@Override
 	public StatusManagerModel viewStatus(int employee_id, String course_name) {
 		
@@ -117,4 +130,7 @@ public class TraineeServiceImpl implements TraineeService {
 		
 	}}
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 

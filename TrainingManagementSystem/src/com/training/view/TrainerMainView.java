@@ -5,7 +5,11 @@ import java.util.Scanner;
 import com.training.controller.TrainerController;
 import com.training.exception.ValidationException;
 import com.training.model.PostTrainingDetailsModel;
+<<<<<<< HEAD
 import com.training.model.TrainerModel;
+=======
+import com.training.model.TrainerViewFeedbackModel;
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 import com.training.validation.TrainerModelValidator;
 
 public class TrainerMainView {
@@ -16,8 +20,7 @@ public class TrainerMainView {
 		System.out.println("=>1. Post Training");
 		System.out.println("=>2. View FeedBack");
 		System.out.println("=>3. Exit");
-		try(Scanner scanner=new Scanner(System.in);){
-			
+		Scanner scanner=new Scanner(System.in);	
 			System.out.print("\nOption:");
 			int option=scanner.nextInt();
 			
@@ -32,30 +35,29 @@ public class TrainerMainView {
 				   break;			
 			default:System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 			        mainMenu();
-				  
 			}
-			
-		}catch(Exception e) {
-			
-			System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
-		}
-		
+	
 	}
 
 	private void viewFeedback() {
 		// TODO Auto-generated method stub
-		 TrainerController trainerController=new TrainerController();
-         
-         try(Scanner scanner=new Scanner(System.in);){
-             System.out.print("Please Enter Employee Id:");
-             int employeeId=scanner.nextInt();
-             trainerController.handleRetrieveFeedback(employeeId);
-            
-            
-         }catch(Exception e) {
-             e.printStackTrace();
-         }
+				  
+		  try(Scanner scanner=new Scanner(System.in);){
+			  System.out.print("Please Enter Employee Id:");
+			  int employeeId=scanner.nextInt();
+			  
+			  TrainerViewFeedbackModel model=new TrainerViewFeedbackModel();
+			  model.setEmployeeId(employeeId);
+			  TrainerController trainerController=new TrainerController();
+			  trainerController.handleviewFeedbackDetails(model);
+			  
+			  
+		  }catch(Exception e) {
+			  e.printStackTrace();
+		  }
+		
 	}
+
 
 	private void postTraining() {
 		// TODO Auto-generated method stub
@@ -90,14 +92,20 @@ public class TrainerMainView {
 			
 			PostTrainingDetailsModel model=new PostTrainingDetailsModel();
 			model.setEmployeeId(employeeId);
+<<<<<<< HEAD
 
 			TrainerModel controller=new TrainerModel();
 			controller.handleCourse(model);
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 			model.setCourseName(courseName);
 			TrainerController controller=new TrainerController();
 			controller.handlepostTrainingDetails(model);
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 			
 		   mainMenu();
 		}catch(Exception e) {

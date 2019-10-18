@@ -1,5 +1,8 @@
 package com.training.view;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
 import java.util.Scanner;
 
@@ -14,7 +17,10 @@ import com.training.model.TraineeModel;
 
 
 public class TraineeView {
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 	public  void mainTraineeView() {
 	  
 		
@@ -137,6 +143,7 @@ public class TraineeView {
 	    mainTraineeView();
 	}}catch(Exception e) {
 		System.out.println("[!Error processing request. Please try again later]");
+<<<<<<< HEAD
 	}}
 	public void displayStatus(StatusManagerModel trainee) {
 		// TODO Auto-generated method stub
@@ -149,3 +156,16 @@ public class TraineeView {
 }
 	
 
+=======
+	}
+	    }
+}
+	    
+	   /* public void viewhistory()
+	    {
+	    }
+       */
+
+	
+	
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
