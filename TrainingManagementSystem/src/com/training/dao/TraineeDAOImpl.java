@@ -1,6 +1,6 @@
 package com.training.dao;
 
-<<<<<<< HEAD
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,15 +8,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
-
-<<<<<<< HEAD
 import com.training.entities.Training;
 import com.training.integrate.ConnectionManager;
 
 public class TraineeDAOImpl implements TraineeDAO {
-
 
 		 
 		 @Override
@@ -89,14 +84,6 @@ public class TraineeDAOImpl implements TraineeDAO {
 			else
 			return false;
 		}
-			
-	
-
-
-
-
 		}
 
-=======
-public class TraineeDAOImpl {}
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+

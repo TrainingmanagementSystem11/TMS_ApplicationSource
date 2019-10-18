@@ -3,24 +3,20 @@ package com.training.validation;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.training.model.TraineeModel;
 import com.training.model.TrainerModel;
 
 public class TrainerModelValidator {
-public boolean validate(TraineeModel model) {
+public boolean validate(TrainerModel model) {
 		
 		boolean result=false;
 		
-<<<<<<< HEAD
-		if(validString(model.getCourseName()) &&validNumber(model.getEmployeeId())
-=======
 		if(validcourseName(model.getCourseName()) &&validNumber(model.getCourseId())
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 			&&	validNumber(model.getEmployeeId())){
 			result=true;
 		}
 		return result;
 	}
+
 public boolean validcourseName(String courseName) { {
 		
 		boolean result=false;

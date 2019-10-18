@@ -3,7 +3,7 @@ package com.training.model;
 public class TrainerViewFeedbackModel {
 
 	private int employeeId;
-	private String feedaback;
+	private String feedback;
 
 	public TrainerViewFeedbackModel() {
 		
@@ -17,18 +17,18 @@ public class TrainerViewFeedbackModel {
 		this.employeeId = employeeId;
 	}
 
-	public String getFeedaback() {
-		return feedaback;
+	public String getFeedback() {
+		return feedback;
 	}
 
-	public void setFeedaback(String feedaback) {
-		this.feedaback = feedaback;
+	public void setFeedback(String feedaback) {
+		this.feedback = feedaback;
 	}
 
 	@Override
 	public String toString() {
-		return "TrainerViewFeedbackModel [employeeId=" + employeeId + ", feedaback=" + feedaback + ", getEmployeeId()="
-				+ getEmployeeId() + ", getFeedaback()=" + getFeedaback() + ", getClass()=" + getClass()
+		return "TrainerViewFeedbackModel [employeeId=" + employeeId + ", feedback=" + feedback + ", getEmployeeId()="
+				+ getEmployeeId() + ", getFeedaback()=" + getFeedback() + ", getClass()=" + getClass()
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
@@ -37,7 +37,7 @@ public class TrainerViewFeedbackModel {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + employeeId;
-		result = prime * result + ((feedaback == null) ? 0 : feedaback.hashCode());
+		result = prime * result + ((feedback == null) ? 0 : feedback.hashCode());
 		return result;
 	}
 
@@ -52,10 +52,10 @@ public class TrainerViewFeedbackModel {
 		TrainerViewFeedbackModel other = (TrainerViewFeedbackModel) obj;
 		if (employeeId != other.employeeId)
 			return false;
-		if (feedaback == null) {
-			if (other.feedaback != null)
+		if (feedback == null) {
+			if (other.feedback != null)
 				return false;
-		} else if (!feedaback.equals(other.feedaback))
+		} else if (!feedback.equals(other.feedback))
 			return false;
 		return true;
 	}

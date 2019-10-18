@@ -158,6 +158,20 @@ public class AdminView
 	}
 	
 
+<<<<<<< HEAD
 	 
+=======
+	private static void ViewHistory() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void adminView() {
+		// TODO Auto-generated method stub
+	}
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 }
+<<<<<<< HEAD
   
+=======
+	
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

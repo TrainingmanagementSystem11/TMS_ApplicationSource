@@ -12,13 +12,13 @@ public class LoginServiceImpl {
 		this.loginDAO=FactoryLoginDB.createLoginDAO();
 	}
 	
-	@Override
-	public String userAuthenticationService(LoginModel loginModel) throws ClassNotFoundException, SQLException {
+	/*@Override
+	public String userAuthenticationService(LoginModel loginModel)  {
 		
 		// TODO Auto-generated method stub
 		String userValid=loginDAO.userAuth(loginModel.getEmployeeId(),loginModel.getPassword());
 		//System.out.println(userValid);
 		
 		return userValid;
-}
+}*/
 }

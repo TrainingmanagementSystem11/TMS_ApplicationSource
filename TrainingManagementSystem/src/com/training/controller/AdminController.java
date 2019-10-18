@@ -1,7 +1,10 @@
 package com.training.controller;
 
 
+<<<<<<< HEAD
 import java.net.Authenticator.RequestorType;
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 import java.util.List;
 import com.training.helper.FactoryAdminDAO;
 import com.training.model.AttendeesAdminModel;
@@ -11,7 +14,10 @@ import com.training.service.AdminService;
 import com.training.service.AdminServiceImpl;
 import com.training.view.AdminView;
 import com.training.view.UpdateAdminModel;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
 
 public class AdminController {
 
