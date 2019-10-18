@@ -11,11 +11,10 @@ public boolean validate(TraineeModel model) {
 		
 		boolean result=false;
 		
-<<<<<<< HEAD
+
 		if(validString(model.getCourseName()) &&validNumber(model.getEmployeeId())
-=======
-		if(validcourseName(model.getCourseName()) &&validNumber(model.getCourseId())
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+if(validcourseName(model.getCourseName()) &&validNumber(model.getCourseId())
+
 			&&	validNumber(model.getEmployeeId())){
 			result=true;
 		}

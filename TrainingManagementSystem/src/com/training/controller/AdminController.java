@@ -1,6 +1,5 @@
 package com.training.controller;
 
-<<<<<<< HEAD
 import java.net.Authenticator.RequestorType;
 import java.util.List;
 import com.training.helper.FactoryAdminDAO;
@@ -12,10 +11,9 @@ import com.training.service.AdminServiceImpl;
 import com.training.view.AdminView;
 import com.training.view.UpdateAdminModel;
 
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 public class AdminController {
-<<<<<<< HEAD
+
 	private AdminService adminService;
 	AdminView employeeView=new AdminView();
 	
@@ -46,6 +44,5 @@ public class AdminController {
 		 adminService.updateDateService(scheduleAdminModel);	
 		}
 	}
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 }

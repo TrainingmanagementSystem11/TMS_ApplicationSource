@@ -1,19 +1,19 @@
 package com.training.controller;
 
-<<<<<<< HEAD
+
 import com.training.helper.FactoryEmployeeDB;
 import com.training.model.FeedbackTraineeModel;
+import com.training.model.StatusManagerModel;
 import com.training.model.TraineeModel;
 import com.training.service.TraineeService;
-import com.training.validation.TrainerModelValidator;
+//import com.training.validation.TrainerModelValidator;
 import com.training.view.TraineeView;
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 
 public class TraineeController {
-<<<<<<< HEAD
+
 	public TraineeService traineeService;
-	
+	TraineeView traineeView=new TraineeView();
  public TraineeController() {
 	 this.traineeService=FactoryEmployeeDB.createTraineeService();
  }
@@ -41,26 +41,31 @@ public class TraineeController {
 		     System.out.println(model.getEmployee_id());
 		     System.out.println(model.getFeedback());
 		  boolean outcome=traineeService.updatingfeedback(model);
+		  System.out.println(outcome);
 			if(outcome==true) {
 				System.out.println("Feedback is successfully updated");
 			}else {
 				System.out.println("Feedback is failed to update");
 			}}
-	      public void handleDeleteCourse(TraineeModel model){
-	         boolean outcome=traineeService.deleteCourse(model);
+		
+		
+	      public void handleDeleteCourse(int employee_id,String course_name){
+	         boolean outcome=traineeService.deleteCourse(employee_id,course_name);
+	         
 			if(outcome==true){
 				System.out.println("Nominee cancelled successfully");
 			}else {
 				System.out.println("Nominee is not cancelled successfully");
-}}	
-	/*	public void handlestatus(TraineeModel model) {
-			// TODO Auto-generated method stub
+}
 			
-	
-}
+	      }
+		public void handlestatus(int employee_id,String course_name) {
+			// TODO Auto-generated method stub
+			StatusManagerModel trainee=traineeService.viewStatus(employee_id,course_name);
+			traineeView.displayStatus(trainee);
+		
+	     }
 
-	 }*/
-	 }
-=======
+	 
+
 }
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource

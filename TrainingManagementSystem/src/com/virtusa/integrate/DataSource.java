@@ -1,4 +1,4 @@
-package com.training.integrate;
+package com.virtusa.integrate;
 
 import java.util.ResourceBundle;
 
@@ -9,7 +9,9 @@ public class DataSource {
 	private String password;
 	
 	public DataSource() {
-		ResourceBundle resourceBundle=ResourceBundle.getBundle("DB");
+		ResourceBundle resourceBundle=
+				ResourceBundle.getBundle("DB");
+		
 		this.driver=resourceBundle.getString("driver");
 		this.url=resourceBundle.getString("url");
 		this.username=resourceBundle.getString("username");

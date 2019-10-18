@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.training.controller.TrainerController;
 import com.training.exception.ValidationException;
 import com.training.model.PostTrainingDetailsModel;
+import com.training.model.TrainerModel;
 import com.training.validation.TrainerModelValidator;
 
 public class TrainerMainView {
@@ -89,14 +90,14 @@ public class TrainerMainView {
 			
 			PostTrainingDetailsModel model=new PostTrainingDetailsModel();
 			model.setEmployeeId(employeeId);
-<<<<<<< HEAD
+
 			TrainerModel controller=new TrainerModel();
 			controller.handleCourse(model);
-=======
+
 			model.setCourseName(courseName);
 			TrainerController controller=new TrainerController();
 			controller.handlepostTrainingDetails(model);
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 			
 		   mainMenu();
 		}catch(Exception e) {

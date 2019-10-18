@@ -1,6 +1,6 @@
 package com.training.view;
 
-<<<<<<< HEAD
+
 import java.util.Scanner;
 
 import javax.xml.bind.ValidationException;
@@ -8,13 +8,13 @@ import javax.xml.bind.ValidationException;
 import com.training.controller.TraineeController;
 
 import com.training.model.FeedbackTraineeModel;
+import com.training.model.StatusManagerModel;
 import com.training.model.TraineeModel;
-=======
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+
 
 
 public class TraineeView {
-<<<<<<< HEAD
+
 	public  void mainTraineeView() {
 	  
 		
@@ -36,15 +36,14 @@ public class TraineeView {
 			case 1:selectcourse();
 			       break;
 			case 2:
-				  // checkstatus();
+				     checkstatus();
 				   break;
 			case 3:givefeedback();
 				   break;
 			case 4:cancelcourse();
 				   break;
-			case 5://viewhistory();
-				   break;
-			case 6:System.exit(0);
+		
+			case 5:System.exit(0);
 			        break;
 			default:System.out.println("!ERROR[SELECT APPROPRIATE OPTION]");
 			        mainTraineeView();
@@ -79,26 +78,24 @@ public class TraineeView {
 			}
 		} 
 	
-	 /*   public void checkstatus()
+	    public void checkstatus()
 	    {
 	      try(Scanner scanner=new Scanner(System.in);){
 			
-			int employeeId=0;
+			int employee_id=0;
 			System.out.print("Employee Id:");
 			if(scanner.hasNextInt()) {
-			employeeId=scanner.nextInt();
+			employee_id=scanner.nextInt();
 			System.out.print("Enter Course name:");
-			String courseName=scanner.next();
-				TraineeModel  model=new TraineeModel();
-				model.setEmployeeId(employeeId);
-			    model.setCourseName(courseName);
+			String course_name=scanner.next();
+				
 			    TraineeController controller=new TraineeController();
-			    controller.handlestatus(model);
+			    controller.handlestatus(employee_id,course_name);
 			    mainTraineeView();
 		}}catch(Exception e) {
 			
 		}
-	    }*/
+	    }
 	    public void givefeedback()
 	    {
 	      try(Scanner scanner=new Scanner(System.in);){
@@ -117,6 +114,8 @@ public class TraineeView {
 		 model.setFeedback(feedback);
 		 TraineeController controller=new TraineeController();
 		 controller.UpdateFeedback(model);
+		 System.out.println(model);
+
 		 mainTraineeView();
 		}}catch(Exception e) {
 			e.printStackTrace();
@@ -132,24 +131,21 @@ public class TraineeView {
 			employee_id=scanner.nextInt();
 		System.out.println("Enter Course Name");
 		String course_name=scanner.next();
-	    TraineeModel model=new TraineeModel();
-		model.setEmployee_id(employee_id);
-	    model.setCourse_name(course_name);
+	   
 		TraineeController controller=new TraineeController();
-		controller.handleDeleteCourse(model);
+		controller.handleDeleteCourse( employee_id, course_name);
 	    mainTraineeView();
 	}}catch(Exception e) {
 		System.out.println("[!Error processing request. Please try again later]");
-	}
-	    }
-	   /* public void viewhistory()
-	    {
-	    }
-       */
-	
-    }	
-=======
+	}}
+	public void displayStatus(StatusManagerModel trainee) {
+		// TODO Auto-generated method stub
+		System.out.println("Status is"+trainee.getStatus());
+	}    
 	
 	
+	   
+
 }
->>>>>>> branch 'master' of https://github.com/TrainingmanagementSystem11/TMS_ApplicationSource
+	
+
